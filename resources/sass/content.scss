@@ -1,0 +1,361 @@
+#content {
+  flex-grow: 1;
+}
+
+.content-about-firm__us__h1 {
+  font-size: calc(2.3rem - 50%);
+}
+
+.content-about-firm__text__paragraph p {
+  color: $darker;
+}
+
+/*  cards-services  */
+
+.content-services__text__header {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 42%;
+    border-bottom: 2px solid #33999940;
+    z-index: -1;
+  }
+
+  h3 {
+    display: inline-block;
+    color: #339999;
+    background-color: #fff;
+    cursor: context-menu;
+  }
+}
+
+.content-services__info__block {
+  background-color: #80CBC4;
+  border-radius: .7rem;
+  box-shadow: $shadow__bold__bluer;
+}
+
+.content-services-info-block__image img {
+  width: 85px;
+  padding: 10px 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+
+.content-services__info__block {
+  .row {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-top: 2px solid $lighter;
+      border-bottom: 2px solid $lighter;
+      transition: .5s;
+      -webkit-transform: scaleX(0);
+      -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      -o-transform: scaleX(0);
+      transform: scaleX(0);
+      border-radius: .7rem;
+    }
+
+    &:hover:before {
+      -webkit-transform: scaleX(1);
+      -moz-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      -o-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+
+  &:hover {
+    .content-services-info-block__image img {
+      visibility: visible;
+      opacity: 1;
+      transition: .5s;
+    }
+
+    .content-services-info-block__text {
+      visibility: hidden;
+      opacity: 0;
+      transition: .5s;
+    }
+  }
+}
+
+.content-services-info-block__paragraph {
+  color: $lighter;
+  font-size: .8rem;
+}
+
+.content-services-info-block__btn__read__more {
+  position: relative;
+  margin-bottom: 5px;
+  text-decoration: none;
+  outline: 0;
+  color: $lighter;
+  padding: 10px 15px;
+  border: 1px solid $lighter;
+  transition: all .5s;
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+  opacity: 0;
+  visibility: hidden;
+  border-radius: .7rem;
+}
+
+.content-services__info__block:hover .content-services-info-block__btn__read__more {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.content-services-info-block__btn__read__more:hover {
+  text-decoration: none;
+  background: $lighter;
+  color: $dark;
+}
+
+.content-services-info-block__text {
+  position: absolute;
+  font-size: 1.255rem;
+  top: 30px;
+  margin: 0;
+  padding: 0;
+  color: rgba(250, 250, 250, 0.8);
+  transition: 0.5s;
+}
+
+.content-services__info__block:hover .content-services-info-block__text {
+  top: 1px;
+}
+
+/*  cards-team    */
+
+.content-team-card__block {
+  background-color: $light;
+  border-radius: 1rem;
+  box-shadow: $shadow__darker;
+}
+
+.content-team-card__header {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 42%;
+    border-bottom: 2px solid #33999940;
+    z-index: -1;
+  }
+
+  h3 {
+    display: inline-block;
+    color: #339999;
+    background-color: #fff;
+    cursor: context-menu;
+  }
+}
+
+.content-team-card__block__image {
+  padding: 1.4rem 0;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.content-team-card__block__text__in__paragraph__NSP {
+  color: $bluer;
+  font-size: 1.35rem;
+}
+
+.content-team-card__block__text__in__paragraph__position {
+  color: $darker;
+}
+
+/*  block advantages    */
+
+.content-advantages__block__image {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0;
+}
+
+.content-advantages__block__background__image:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform-origin: center;
+  min-height: 400px;
+  background: #00F260;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #0575E6, #00F260);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #0575E6, #00F260);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: .6;
+}
+
+.content-advantages-block__header h2 {
+  background-color: $light;
+  color: $bluer;
+  border-radius: 1rem;
+  box-shadow: $shadow__darker;
+}
+
+.content-advantages-block__experience, .content-advantages-block__objects, .content-advantages-block__progress, .content-advantages-block__quality {
+  margin-top: 2.5rem;
+}
+
+.content-advantages-block__experience h2, .content-advantages-block__objects h2, .content-advantages-block__progress h2, .content-advantages-block__quality h2 {
+  color: $light;
+  font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 26px);
+}
+
+.content-advantages-block__experience p, .content-advantages-block__objects p, .content-advantages-block__progress p, .content-advantages-block__quality p {
+  font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 16px);
+  color: $light;
+}
+
+/*  block comments  */
+
+.block-comments__text__for__no__auth__user {
+  border-radius: 0.25rem;
+  border: 1px solid #e60000b8;
+  padding: 10px 0;
+  color: var(--danger);
+  background: #ff525245;
+  font-size: calc((100vw - 480px) / (1280 - 480) * (16 - 16) + 16px);
+}
+
+.block-comments__header__text h2, .form-comment-user__name label, .form-comment-user__text label, .public-user-comment__header__text h4 {
+  color: $bluer;
+}
+
+.block-comments__header__text h2 {
+  font-size: calc((100vw - 480px) / (1280 - 480) * (20 - 16) + 18px);
+}
+
+.public-user-comment__header__text h4 {
+  font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 16) + 16px);
+}
+
+.block-comments__header__text h2, .public-user-comment__header__text h4 {
+  border-left: 4px solid $bluer;
+}
+
+.block-comments__btn__login a {
+  text-decoration: none;
+  padding: .5rem 2rem;
+  display: inline-block;
+  color: #ffae2e;
+  background: #f7f7f7;
+  border: 1px solid #ffae2e;
+  border-radius: .7rem;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: calc((100vw - 480px) / (1280 - 480) * (16 - 16) + 16px);
+  transition: .7s;
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: #ffae2e;
+    color: $light;
+    box-shadow: 0 0 0 0.2rem rgba(255, 174, 46, 0.35);
+  }
+}
+
+.form-comment-user__name label:focus, .form-comment-user__text label:focus {
+  box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+  color: $darker;
+}
+
+.form-comment-user__name input, .form-comment-user__text textarea {
+  border-color: $bluer;
+}
+
+.form-comment__btn__submit {
+  background-color: transparent;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: all .5s;
+  color: $bluer;
+  border: 1px solid $bluer;
+
+  &:hover {
+    box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+    background-color: $bluer;
+    color: $lighter;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .content-about-firm__text__paragraph p {
+    font-size: .9rem;
+  }
+  .content-advantages-block__experience p, .content-advantages-block__objects p, .content-advantages-block__progress p, .content-advantages-block__quality p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-team-card__block__image img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content-services__text__header h3, .content-team-card__header h3 {
+    font-size: 1.55rem;
+  }
+  .content-services-info-block__image img {
+    width: 55px;
+    padding: 5px 0;
+  }
+  .content-services-info-block__text {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+  .content-team-card__block__image img {
+    width: 175px;
+  }
+  .content-team-card__block__text__in__paragraph__NSP {
+    font-size: 1.2rem;
+  }
+  .footer-block__text__in__down {
+    font-size: 1rem;
+  }
+  .footer-block__contact__us h3 {
+    font-size: 1.3rem;
+  }
+  .footer-block-contact-us__list__group li {
+    font-size: 1rem;
+  }
+}

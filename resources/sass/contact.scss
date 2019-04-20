@@ -1,0 +1,122 @@
+.contact-content__block__background {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0;
+  z-index: -1;
+
+  .contact-content__background {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: url("/images/contact_us_content/contact.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: #1783f1;
+      opacity: .5;
+    }
+  }
+}
+
+.contact-content__h2__header {
+  padding: calc(11px + 10%) 0 0 0;
+  margin: 0;
+  font-size: calcFluidFontSize(16, 30, 480, 1280);
+  color: #f7f7f7;
+  text-transform: uppercase;
+}
+
+.contact-content__p__header {
+  padding: calc(5px + 1%) 0 calc(11px + 10%) 0;
+  font-size: calcFluidFontSize(16, 20, 480, 1280);
+  color: #f7f7f7;
+}
+
+#contact-content {
+  margin-top: -40px;
+}
+
+.contact-content__box {
+  border: 1px solid #eaf0f6;
+  background: #fff;
+  color: #33475b;
+
+  .contact-content-box__icon {
+    font-size: calcFluidFontSize(24, 38, 480, 1280);
+    padding: 25px 0 30px 0;
+  }
+
+  .contact-content-box__h4 {
+    font-size: calcFluidFontSize(14, 22, 480, 1280);
+    font-weight: 600;
+  }
+
+  .contact-content-box__p {
+    font-size: calcFluidFontSize(12, 16, 480, 1280);
+  }
+
+  .contact-content-box__for__tel {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    .contact-content-box__btn__get__in__touch__purple{
+      background: #574e9221;
+      border: 1px solid #574e92;
+      color: #574e92;
+      padding: 5px 15px;
+      border-radius: 0.3rem;
+      transition: .5s;
+      font-size: calcFluidFontSize(14, 18, 480,1280);
+      &:hover {
+        background: #574e92;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+
+    .contact-content-box__btn__get__in__touch__blue {
+      background: #61dafb14;
+      color: #61dafb;
+      border: 1px solid #61dafb;
+      padding: 5px 15px;
+      border-radius: 0.3rem;
+      transition: .5s;
+      font-size: calcFluidFontSize(14, 18, 480,1280);
+
+      &:hover {
+        background: #61dafb;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+
+    .contact-content-box__tel {
+      color: #0091ae;
+      transition: .5s;
+      font-size: calcFluidFontSize(14, 18, 480, 1280);
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
