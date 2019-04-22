@@ -189,7 +189,7 @@
               <div class="form-comment-user__name form-group">
                 <label for="formGroupExampleInput">Введите ваше имя (пвседоним)</label>
                 <input type="text" class="form-control" id="formGroupExampleInput"
-                       placeholder="Имя пользователя">
+                       placeholder="Имя пользователя" value="{{auth::user()->name}}">
               </div>
               <div class="form-comment-user__text form-group">
                 <label for="exampleFormControlTextarea">Напишите отзыв</label>
@@ -215,8 +215,6 @@
         </div>
     @endauth
   @endif
-
-
 
 
     <div id="public-user-comment" class="row mt-2">

@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts/main')
 
 @section('services_content')
     <div id="content">

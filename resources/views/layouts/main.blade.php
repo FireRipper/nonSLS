@@ -9,7 +9,7 @@
         content="Установка охранной системы сигнализации,
            видеонеблюдение, мини АТС, видеодомофоны, система контроля доступа!">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>NonSLS</title>
+  <title>{{$titles}}</title>
   <link rel="shortcut icon" href="{{asset('/favicon.ico')}}" type="image/x-icon">
   <link rel="icon" href="{{asset('/favicon.ico')}}" type="image/x-icon">
   <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css">
@@ -40,15 +40,32 @@
         <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{url('request')}}"><i
               class="fas fa-scroll"></i> Подача заявы</a>
       </nav>
-      <div class="header-menu__btn d-flex">
+      <div class="header-menu__btn d-flex justify-content-end">
         @if (Route::has('login'))
           @auth
-            <a href="{{ url('/home') }}">Home</a>
+            <div class="dropdown">
+              <a id="navbarDropdown" class="header-menu__btn__user__name nav-link dropdown-toggle rounded" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a href="{{ url('/home') }}" class="dropdown-item"><i class="fas fa-portrait"></i> Личный кабинет</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                  Выйти <i class="fas fa-sign-out-alt"></i>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+              </div>
+            </div>
           @else
-            <a href="{{ route('login') }}" id="login" class="header-menu__btn__navbar__login">Login</a>
+            <a href="{{ route('login') }}" id="login" class="header-menu__btn__navbar__login">Войти</a>
 
             @if (Route::has('register'))
-              <a href="{{ route('register') }}" id="registration" class="header-menu__btn__navbar__registration">Register</a>
+              <a href="{{ route('register') }}" id="registration" class="header-menu__btn__navbar__registration">Регистрация</a>
             @endif
           @endauth
         @endif
@@ -58,7 +75,10 @@
 </header>
 <button id="btn-go__to__top" style="display: none;"><i class="fas fa-arrow-up"></i></button>
 
-  @yield('main_content')
+@yield('main_content')
+@yield('services_content')
+@yield('contact_content')
+@yield('request_content')
 
 <footer id="footer" class="footer border-top text-center">
   <div class="container-fluid">

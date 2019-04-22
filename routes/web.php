@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@getMain');
+
+Route::get('services', 'MainController@getServices');
+
+Route::get('contacts', 'MainController@getContact');
+
+Route::get('request', 'MainController@getRequest');
 
 Auth::routes();
 

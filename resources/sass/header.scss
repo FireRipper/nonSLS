@@ -8,7 +8,7 @@ header {
 }
 
 #header-menu {
-  box-shadow: var(--shadow__bold__lighter);
+  box-shadow: $shadow__bold__lighter;
 }
 
 .navbar-toggler:focus {
@@ -20,17 +20,10 @@ header {
   font-weight: bold;
 }
 
-.header-menu__btn a {
-  &:first-child {
-    color: #ffae2e;
-    background: #f7f7f7;
-    border: 1px solid #ffae2e;
-  }
-  &:last-child {
-    color: #f5f8fa;
-    background: #ffae2e;
-    border: 1px solid #ffae2e;
-  }
+.header-menu__btn__navbar__login {
+  color: #ffae2e;
+  background: #FFFFFF;
+  border: 1px solid #ffae2e;
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -40,18 +33,63 @@ header {
   font-size: 0.9rem;
   border-radius: 0.5rem;
   transition: .5s;
+
   &:not(:disabled):not(.disabled) {
     cursor: pointer;
   }
+
   &:focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 174, 46, 0.35);
     text-decoration: none;
   }
+
   &:hover {
     text-decoration: none;
     background: #ffae2e;
     color: #f5f8fa;
+    box-shadow: 0 0 0 0.2rem rgba(255, 174, 46, 0.35);
+  }
+}
+
+.header-menu__btn__navbar__registration {
+  color: #f5f8fa;
+  background: #ffae2e;
+  border: 1px solid #ffae2e;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: .5rem .95rem;
+  margin: .3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  transition: .5s;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 174, 46, 0.35);
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background: #ffae2e;
+    color: #f5f8fa;
+    box-shadow: 0 0 0 0.2rem rgba(255, 174, 46, 0.35);
+  }
+}
+
+.header-menu__btn__user__name {
+  font-size: calcFluidFontSize(16, 18, 480, 1280);
+  background: #fff;
+  color: #ffae2e;
+  border: 1px solid #ffae2e;
+  transition: .7s;
+
+  &:hover {
+    background: #ffae2e;
+    color: $light;
     box-shadow: 0 0 0 0.2rem rgba(255, 174, 46, 0.35);
   }
 }
@@ -68,6 +106,7 @@ header {
   z-index: 2;
   border: 1px solid #20bf96;
   border-radius: .3rem;
+
   &::before {
     content: '';
     background: #20bf96;
@@ -77,14 +116,16 @@ header {
     transform: translate(-50%, -50%);
     transition: .4s all;
     z-index: -1;
-    width: 100%;
+    width: 101%;
     height: 0;
   }
+
   &:hover {
     transition: 1s all ease;
     color: $lighter !important;
+
     &::before {
-      height: 100%;
+      height: 101%;
     }
   }
 }
@@ -96,17 +137,14 @@ header {
   #navbar-brand__logo__img {
     width: 50px;
   }
-  .header-menu__btn a {
-    font-size: .8rem;
-  }
 }
 
 @media screen and (max-width: 992px) {
   .header-menu__navbar__collapse__btn {
     font-size: 1rem;
   }
-  .header-menu__btn a {
-    font-size: .9rem;
+  .header-menu__btn__user__name{
+    margin-top: 5px;
   }
 }
 
