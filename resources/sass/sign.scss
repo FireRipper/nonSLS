@@ -1,18 +1,16 @@
 .form-registration, .form-authorization {
   padding: 30px;
-  background: $lighter;
+  border: 1px solid #eaf0f6;
   border-radius: .5em;
   box-shadow: $shadow__bold__bluer;
 }
 
-.form-registration__header h2 {
-  text-align: right;
+.form-registration__text__label__bluer, .form-authorization__text__label__bluer, .form-authorization-registration__header h2 {
   color: $bluer;
 }
 
-.form-registration__text__label__bluer, .form-authorization__text__label__bluer, .form-authorization__header h2 {
-  color: $bluer;
-  text-align: center;
+.form-authorization-registration__header__h2 {
+  font-size: calcFluidFontSize(22, 28, 480, 1280);
 }
 
 .form-registration-authorization__style__input {
@@ -39,7 +37,7 @@
   position: absolute;
   background: url("/images/sign_page/chemical_vessels/chemical_vessels.png") center;
   transform-origin: center;
-  top: 76%;
+  top: 80%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -53,6 +51,7 @@
   text-align: center;
   transition: all .7s;
   background: #4CD137;
+  width: 100%;
   color: $lighter;
   opacity: .8;
   border: 1px solid #4CD137;
@@ -64,6 +63,32 @@
   opacity: 1;
 }
 
+.form-authorization__remember__text {
+  color: $bluer;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.form-authorization__fa__icon {
+  &:hover {
+    text-decoration: none;
+  }
+  .form-authorization__fa__icon__style {
+    font-size: calcFluidFontSize(14, 18, 480, 1280);
+    border: 1px solid #ffae2e;
+    padding: .5rem;
+    color: #ffae2e;
+    background: #ffae2e1f;
+    transition: .5s;
+    &:hover{
+      color: $light;
+      background: #ffae2e;
+    }
+  }
+}
+
+
 .form-registration__btn__submit:focus, .form-authorization__btn__submit:focus {
   box-shadow: 0 0 0 0.2rem rgba(76, 209, 55, 0.35);
 }
@@ -71,7 +96,7 @@
 .form-registration__btn__link__login a {
   background-color: #03A9F4;
   color: $lighter;
-  padding: 5px 30px;
+  padding: 7px 60px;
   border-radius: .3rem;
   opacity: 0.7;
   transition: 0.4s;
@@ -83,7 +108,7 @@
 }
 
 @media screen and (max-width: 992px) {
-  .form-registration__btn__submit, .form-authorization__btn__submit {
+   .form-authorization__btn__submit {
     width: 100%;
   }
   .form-registration__bg__image:before {

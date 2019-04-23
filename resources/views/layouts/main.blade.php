@@ -47,10 +47,10 @@
               <a id="navbarDropdown" class="header-menu__btn__user__name nav-link dropdown-toggle rounded" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
               </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a href="{{ url('/home') }}" class="dropdown-item"><i class="fas fa-portrait"></i> Личный кабинет</a>
+              <div class="dropdown-menu dropdown-menu-right header-dropdown-menu__style" aria-labelledby="navbarDropdown">
+                <a href="{{ url('/home') }}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-portrait"></i> Личный кабинет</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="dropdown-item header-menu__dropdown__logout" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                   Выйти <i class="fas fa-sign-out-alt"></i>

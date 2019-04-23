@@ -94,6 +94,25 @@ header {
   }
 }
 
+.header-dropdown-menu__style {
+  border: 1px solid $bluer;
+}
+
+.header-menu__dropdown__logout, .header-menu__dropdown__private__cab{
+  font-size: calcFluidFontSize(14, 14.5, 480, 1280);
+  color: $bluer;
+  &:hover {
+    color: $bluer;
+  }
+  &:focus {
+    color: $bluer;
+  }
+  &:active{
+    color: $bluer;
+    background: #fff;
+  }
+}
+
 .header-menu__navbar__collapse__btn {
   position: relative;
   overflow: hidden;

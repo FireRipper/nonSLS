@@ -157,6 +157,25 @@ header {
   box-shadow: 0 0 0 0.2rem rgba(255, 174, 46, 0.35);
 }
 
+.header-dropdown-menu__style {
+  border: 1px solid #339999;
+}
+
+.header-menu__dropdown__logout, .header-menu__dropdown__private__cab {
+  font-size: calc(0.000625 * 100vw + 13.7px);
+  color: #339999;
+}
+.header-menu__dropdown__logout:hover, .header-menu__dropdown__private__cab:hover {
+  color: #339999;
+}
+.header-menu__dropdown__logout:focus, .header-menu__dropdown__private__cab:focus {
+  color: #339999;
+}
+.header-menu__dropdown__logout:active, .header-menu__dropdown__private__cab:active {
+  color: #339999;
+  background: #fff;
+}
+
 .header-menu__navbar__collapse__btn {
   position: relative;
   overflow: hidden;
@@ -1034,19 +1053,17 @@ header {
 
 .form-registration, .form-authorization {
   padding: 30px;
-  background: #ecf0f1;
+  border: 1px solid #eaf0f6;
   border-radius: 0.5em;
   box-shadow: 0 3px 6px rgba(51, 153, 153, 0.16), 0 3px 6px rgba(51, 153, 153, 0.23);
 }
 
-.form-registration__header h2 {
-  text-align: right;
+.form-registration__text__label__bluer, .form-authorization__text__label__bluer, .form-authorization-registration__header h2 {
   color: #339999;
 }
 
-.form-registration__text__label__bluer, .form-authorization__text__label__bluer, .form-authorization__header h2 {
-  color: #339999;
-  text-align: center;
+.form-authorization-registration__header__h2 {
+  font-size: calc(0.0075 * 100vw + 18.4px);
 }
 
 .form-registration-authorization__style__input {
@@ -1075,7 +1092,7 @@ header {
   background: url("/images/sign_page/chemical_vessels/chemical_vessels.png") center;
   -webkit-transform-origin: center;
           transform-origin: center;
-  top: 76%;
+  top: 80%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -1089,6 +1106,7 @@ header {
   text-align: center;
   transition: all 0.7s;
   background: #4CD137;
+  width: 100%;
   color: #ecf0f1;
   opacity: 0.8;
   border: 1px solid #4CD137;
@@ -1100,6 +1118,29 @@ header {
   opacity: 1;
 }
 
+.form-authorization__remember__text {
+  color: #339999;
+}
+.form-authorization__remember__text:hover {
+  cursor: pointer;
+}
+
+.form-authorization__fa__icon:hover {
+  text-decoration: none;
+}
+.form-authorization__fa__icon .form-authorization__fa__icon__style {
+  font-size: calc(0.005 * 100vw + 11.6px);
+  border: 1px solid #ffae2e;
+  padding: 0.5rem;
+  color: #ffae2e;
+  background: #ffae2e1f;
+  transition: 0.5s;
+}
+.form-authorization__fa__icon .form-authorization__fa__icon__style:hover {
+  color: #f8f9fa;
+  background: #ffae2e;
+}
+
 .form-registration__btn__submit:focus, .form-authorization__btn__submit:focus {
   box-shadow: 0 0 0 0.2rem rgba(76, 209, 55, 0.35);
 }
@@ -1107,7 +1148,7 @@ header {
 .form-registration__btn__link__login a {
   background-color: #03A9F4;
   color: #ecf0f1;
-  padding: 5px 30px;
+  padding: 7px 60px;
   border-radius: 0.3rem;
   opacity: 0.7;
   transition: 0.4s;
@@ -1119,7 +1160,7 @@ header {
 }
 
 @media screen and (max-width: 992px) {
-  .form-registration__btn__submit, .form-authorization__btn__submit {
+  .form-authorization__btn__submit {
     width: 100%;
   }
 
