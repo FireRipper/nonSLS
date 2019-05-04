@@ -20,7 +20,7 @@
 <body>
 <header>
   <nav id="header-menu" class="navbar navbar-expand-lg for-header-navbar navbar-light">
-    <a class="navbar-brand" href="{{url('/')}}">
+    <a class="navbar-brand" href="{{route('main')}}">
       <img id="navbar-brand__logo__img" src="{{asset('images/page/logo/logo-LNR.svg')}}" alt="logo">
       <span class="header-menu__logo__text">Лаборатория нестандартных решений</span>
     </a>
@@ -31,13 +31,13 @@
     </button>
     <div class="collapse navbar-collapse justify-content-lg-around" id="navbarNavAltMarkup" style>
       <nav class="navbar-nav text-center">
-        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{url('/')}}"><i
+        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{route('main')}}"><i
               class="fas fa-home"></i> Главная</a>
-        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{url('services')}}"><i
+        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{route('services')}}"><i
               class="fas fa-cog"></i> Услуги</a>
-        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{url('contacts')}}"><i
+        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{route('contacts')}}"><i
               class="far fa-address-book"></i> Контакты</a>
-        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{url('request')}}"><i
+        <a class="header-menu__navbar__collapse__btn nav-item nav-link ml-2 mt-1" href="{{route('request')}}"><i
               class="fas fa-scroll"></i> Подача заявы</a>
       </nav>
       <div class="header-menu__btn d-flex justify-content-end">
@@ -79,6 +79,7 @@
 @yield('services_content')
 @yield('contact_content')
 @yield('request_content')
+@yield('home_content')
 
 <footer id="footer" class="footer border-top text-center">
   <div class="container-fluid">
@@ -137,7 +138,6 @@
     </div>
   </div>
 </footer>
-<script type="application/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 <script type="application/javascript" src="{{asset('js/app.js')}}"></script>
 <script type="application/javascript" src="{{asset('js/main.js')}}"></script>
 </body>

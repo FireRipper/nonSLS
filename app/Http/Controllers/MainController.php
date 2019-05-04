@@ -3,41 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
   //show main page
   public function getMain()
   {
+    $comments = DB::table('comments')->paginate(10);
 
     $titles = 'Лаборатория нестандартных решений';
 
-    return view('welcome')->with('titles', $titles);
+    return view('welcome', ['comments' => $comments])->with('titles', $titles);
   }
-
-/*  //show login registration
-  public function registr_user()
-  {
-
-    $titles = "ЛНР - Регистрация";
-
-    return view('auth/registration')->with('titles', $titles);
-  }
-
-  //show login page
-  public function login_user()
-  {
-
-    $titles = "ЛНР - Авторизация";
-
-    return view('auth/login')->with('titles', $titles);
-  }
-
-  //show success registration user
-  public function getRegister()
-  {
-    return view('emails/register');
-  }*/
 
   //show services page
   public function getServices()

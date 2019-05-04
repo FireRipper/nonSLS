@@ -5,7 +5,7 @@
     <div class="container">
       <div id="content-about-firm" class="row m-2 ">
         <div class="content-about-firm__text__paragraph align-self-center col-12">
-          <h1 class="content-about-firm__us__h1 p-3">О фирме</h1>
+          <h1 class="content-about-firm__us__h1 p-3 animated fadeInLeft">О фирме</h1>
           <p class="p-sm-3 pt-0">Наша фирма занимается установкой систем видеонаблюдения, монтаж охранных
             систем и сигнализации
             как со сдачей на пульт охраны так и автономные, установка систем контроля
@@ -30,7 +30,8 @@
             <p class="content-services-info-block__paragraph col-lg-12">На сегодняшний день системы
               видеонаблюдения – важная часть
               повседневной жизни каждого человека.</p>
-            <a class="content-services-info-block__btn__read__more" href="{{url('services#video_camera')}}">Подробнее</a>
+            <a class="content-services-info-block__btn__read__more"
+               href="{{url('services#video_camera')}}">Подробнее</a>
           </div>
         </div>
         <div class="content-services__info__block col-xl-2 my-2 py-md-3">
@@ -90,7 +91,8 @@
             <p class="content-services-info-block__paragraph col-lg-12">Если подъезд дома или офиса не
               охраняется, рано или поздно это повлечет за собой неприятности.
               Домофонные системы призваны обезопасить людей от проникновения злоумышленников.</p>
-            <a class="content-services-info-block__btn__read__more" href="{{url('services#video_intercom')}}">Подробнее</a>
+            <a class="content-services-info-block__btn__read__more"
+               href="{{url('services#video_intercom')}}">Подробнее</a>
           </div>
         </div>
       </div>
@@ -181,20 +183,33 @@
       </div>
     </div>
     <hr>
-  @if (Route::has('login'))
-    @auth
+    @if (Route::has('login'))
+      @auth
         <div id="form-comments">
-          <div class="col-lg-12">
-            <form action="javascript:void(0);" method="post" id="form-comment-user">
+          <div class="col-md-9">
+            <form action="{{url('/')}}" method="post" id="form-comment-user">
+              @csrf
               <div class="form-comment-user__name form-group">
                 <label for="formGroupExampleInput">Введите ваше имя (пвседоним)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput"
-                       placeholder="Имя пользователя" value="{{auth::user()->name}}">
+                <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                       id="formGroupExampleInput"
+                       placeholder="Имя пользователя" name="name" value="{{auth::user()->name}}" required>
+                @if ($errors->has('name'))
+                  <span class="invalid-feedback text-right" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                @endif
               </div>
               <div class="form-comment-user__text form-group">
-                <label for="exampleFormControlTextarea">Напишите отзыв</label>
-                <textarea class="form-control" name="user__text" id="exampleFormControlTextarea"
-                          rows="3" placeholder="Ваш комментарий"></textarea>
+                <label for="comment">Напишите отзыв</label>
+                <textarea class="form-control {{$errors->has('comment') ? 'is-invalid' : ''}}" name="comment"
+                          id="comment"
+                          rows="3" placeholder="Ваш комментарий" required></textarea>
+                @if ($errors->has('comment'))
+                  <span class="invalid-feedback text-right" role="alert">
+                                        <strong>{{ $errors->first('comment') }}</strong>
+                                    </span>
+                @endif
               </div>
               <div class="form-group">
                 <div class="col-lg-12 mt-3">
@@ -204,7 +219,7 @@
             </form>
           </div>
         </div>
-    @else
+      @else
         <div class="row">
           <div class="col-sm-10 text-center">
             <h4 class="block-comments__text__for__no__auth__user">Войдите чтобы оставить свой коментарий</h4>
@@ -213,18 +228,22 @@
             <a href="{{ route('login') }}" id="block-comments__btn__login">Войти</a>
           </div>
         </div>
-    @endauth
-  @endif
+      @endauth
+    @endif
 
-
-    <div id="public-user-comment" class="row mt-2">
+    <div id="public-user-comment" class="row mt-2 public-user-comment__background">
       <div class="public-user-comment__header__text col-12">
         <h4 class="pl-4">Коментарии</h4>
         <hr>
       </div>
-      <div class="col-12 text-center">
+      <div class="col-md-9">
         <p class="text-muted">Прокомментируйте первым!</p>
+        @foreach($comments as $comment)
+          <div class="public-user-comment__user__name d-inline">{{ $comment-> name }}</div>
+          <p class="public-user-comment__user__text">{{ $comment-> comment }}</p>
+        @endforeach
       </div>
     </div>
   </div>
+
 @endsection

@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $titles = 'ЛНР - личный кабинет';
+        return view('home')->with('titles', $titles);
     }
 }
