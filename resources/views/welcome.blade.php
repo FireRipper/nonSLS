@@ -16,86 +16,68 @@
           </p>
         </div>
       </div>
-      <div id="content-services" class="row justify-content-around">
-        <div class="content-services__text__header text-center text-uppercase col-12 mt-sm-3 mb-sm-2">
-          <h3 class="mb-lg-3 py-md-2 px-3 font-weight-bold">наши услуги</h3>
-        </div>
-        <div class="content-services__info__block col-xl-2 my-2 py-md-3">
-          <div class="row justify-content-center align-items-center text-center">
-            <div class="content-services-info-block__text col-lg-12">Установка Систем Видеонаблюдения</div>
-            <div class="col-lg-12 content-services-info-block__image">
+      {{--block services #2--}}
+      <div class="content-services__text__header text-center text-uppercase col-12 mt-sm-3 mb-sm-2">
+        <h3 class="mb-lg-3 py-md-2 px-3 font-weight-bold">наши услуги</h3>
+      </div>
+      <div id="content-services-block">
+        <div class="content-services-block__box__service">
+          <div class="content-services-block-box-service__thumb"><img src="{{asset('images/main_content/services/pictures/picture_1.png')}}" alt="camera"></div>
+          <div class="content-services-block-box-service__details">
+            <div class="content-services-block-box-service__details__content">
               <img src="{{asset('images/main_content/services/light_theme/video_camera/video_camera.png')}}"
-                   alt="video_camera">
+                   alt="video_camera" class="content-services-block-box-service__details__content__img">
+              <h3 class="content-services-block-box-service__details__content__h3">Установка Систем Видеонаблюдения</h3>
+              <a href="{{url('services#video_camera')}}" class="content-services-block-box-service__details__content__a">Подробнее</a>
             </div>
-            <p class="content-services-info-block__paragraph col-lg-12">На сегодняшний день системы
-              видеонаблюдения – важная часть
-              повседневной жизни каждого человека.</p>
-            <a class="content-services-info-block__btn__read__more"
-               href="{{url('services#video_camera')}}">Подробнее</a>
           </div>
         </div>
-        <div class="content-services__info__block col-xl-2 my-2 py-md-3">
-          <div class="row justify-content-center text-center align-items-center">
-            <div class="col col-lg-12 content-services-info-block__image">
+        <div class="content-services-block__box__service">
+          <div class="content-services-block-box-service__thumb"><img src="{{asset('images/main_content/services/pictures/picture_2.jpg')}}" alt="alarm_system"></div>
+          <div class="content-services-block-box-service__details">
+            <div class="content-services-block-box-service__details__content">
               <img src="{{asset('images/main_content/services/light_theme/security_alarm/security_light.png')}}"
-                   alt="security">
+                   alt="security" class="content-services-block-box-service__details__content__img">
+              <h3 class="content-services-block-box-service__details__content__h3">Охранная Система, Сигнализация</h3>
+              <a href="{{url('services#security')}}" class="content-services-block-box-service__details__content__a">Подробнее</a>
             </div>
-            <div class="content-services-info-block__text col col-lg-12">Охранная Система, Сигнализация
-            </div>
-            <p class="content-services-info-block__paragraph col-lg-12">Современная охранная
-              система играют очень значительную роль в жизни людей. лагодаря ей можно не беспокоиться за
-              свою безопасность
-              и безопасность своих близких, а также за сохранность ценностей. </p>
-            <a class="content-services-info-block__btn__read__more" href="{{url('services#security')}}">Подробнее</a>
           </div>
         </div>
-        <div class="content-services__info__block col-xl-2 my-2 py-md-3">
-          <div class="row justify-content-center text-center align-items-center">
-            <div class="col col-lg-12 content-services-info-block__image">
+        <div class="content-services-block__box__service">
+          <div class="content-services-block-box-service__thumb"><img src="{{asset('images/main_content/services/pictures/picture_3.jpg')}}" alt="ats"></div>
+          <div class="content-services-block-box-service__details">
+            <div class="content-services-block-box-service__details__content">
               <img src="{{asset('images/main_content/services/light_theme/automatic_telephone_station/ats_light.png')}}"
-                   alt="ats">
+                   alt="ats" class="content-services-block-box-service__details__content__img">
+              <h3 class="content-services-block-box-service__details__content__h3">Установка Мини-АТС</h3>
+              <a href="{{url('services#mini-ATS')}}" class="content-services-block-box-service__details__content__a">Подробнее</a>
             </div>
-            <div class="content-services-info-block__text col col-lg-12">
-              Установка Мини-АТС
-            </div>
-            <p class="content-services-info-block__paragraph col-lg-12">На сегодняшний день системы
-              видеонаблюдения – важная часть
-              повседневной жизни каждого человека.</p>
-            <a class="content-services-info-block__btn__read__more" href="{{url('services#mini-ATS')}}">Подробнее</a>
           </div>
         </div>
-        <div class="content-services__info__block col-xl-2 my-2 py-md-3">
-          <div class="row justify-content-center text-center align-items-center">
-            <div class="col col-lg-12 content-services-info-block__image">
+        <div class="content-services-block__box__service">
+          <div class="content-services-block-box-service__thumb"><img src="{{asset('images/main_content/services/pictures/picture_4.jpg')}}" alt="ASC"></div>
+          <div class="content-services-block-box-service__details">
+            <div class="content-services-block-box-service__details__content">
               <img src="{{asset('images/main_content/services/light_theme/access_control_system/ASC_light.png')}}"
-                   alt="ASC">
+                   alt="ASC" class="content-services-block-box-service__details__content__img">
+              <h3 class="content-services-block-box-service__details__content__h3">Установка Систем Контроля Доступа</h3>
+              <a href="{{url('services#ASC')}}" class="content-services-block-box-service__details__content__a">Подробнее</a>
             </div>
-            <div class="content-services-info-block__text col-lg-12">
-              Установка Систем Контроля Доступа
-            </div>
-            <p class="content-services-info-block__paragraph col-lg-12">Система контроля доступом (СКУД),
-              представляет собой невероятно
-              эффективную защиту от проникновения на тот или иной объект (помещение) посторонних лиц. </p>
-            <a class="content-services-info-block__btn__read__more" href="{{url('services#ASC')}}">Подробнее</a>
           </div>
         </div>
-        <div class="content-services__info__block col-xl-2 my-2 py-md-3">
-          <div class="row justify-content-center text-center align-items-center">
-            <div class="col col-lg-12 content-services-info-block__image">
+        <div class="content-services-block__box__service">
+          <div class="content-services-block-box-service__thumb"><img src="{{asset('images/main_content/services/pictures/picture_5.png')}}" alt="video_intercom"></div>
+          <div class="content-services-block-box-service__details">
+            <div class="content-services-block-box-service__details__content">
               <img src="{{asset('/images/main_content/services/light_theme/video_intercom/video_intercom_light.png')}}"
-                   alt="video_intercom">
+                   alt="video_intercom" class="content-services-block-box-service__details__content__img">
+              <h3 class="content-services-block-box-service__details__content__h3">Установка Домофонных Систем</h3>
+              <a href="{{url('services#video_intercom')}}" class="content-services-block-box-service__details__content__a">Подробнее</a>
             </div>
-            <div class="content-services-info-block__text col-lg-12">
-              Установка Домофонных Систем
-            </div>
-            <p class="content-services-info-block__paragraph col-lg-12">Если подъезд дома или офиса не
-              охраняется, рано или поздно это повлечет за собой неприятности.
-              Домофонные системы призваны обезопасить людей от проникновения злоумышленников.</p>
-            <a class="content-services-info-block__btn__read__more"
-               href="{{url('services#video_intercom')}}">Подробнее</a>
           </div>
         </div>
       </div>
+      {{--block services #2--}}
       <div id="content-team-card" class="row my-sm-3 justify-content-around">
         <div class="content-team-card__header col-12 text-center text-uppercase mt-5 mb-sm-3">
           <h3 class="py-md-2 px-3 font-weight-bold">Наша команда</h3>
@@ -103,42 +85,39 @@
         <div class="content-team-card__block col-lg-3 col-sm-5 my-1 text-center animated fadeInUp">
           <div class="row">
             <div class="col-12 content-team-card__block__image">
-              <img src="{{asset('images/main_content/img_no_photo/no_photo.png')}}" alt="no_photo">
+              <img src="{{asset('images/main_content/team/employee_1.jpg')}}" alt="employee_1">
             </div>
             <div class="col-12 content-team-card__block__text__in__paragraph">
               <p class="content-team-card__block__text__in__paragraph__NSP">
-                Фамилия Имя
+                Мушкин Милорад
               </p>
-              <p class="content-team-card__block__text__in__paragraph__position">Занимается тем то тем то,
-                бла, бла,бла,бла,бла.</p>
+              <p class="content-team-card__block__text__in__paragraph__position">Директор по вопросам организации технической охраны.</p>
             </div>
           </div>
         </div>
         <div class="content-team-card__block col-lg-3 col-sm-5 my-1 text-center animated fadeInUp">
           <div class="row">
             <div class="col-12 content-team-card__block__image">
-              <img src="{{asset('images/main_content/img_no_photo/no_photo.png')}}" alt="no_photo">
+              <img src="{{asset('images/main_content/team/employee_2.png')}}" alt="employee_2">
             </div>
             <div class=" col-12 content-team-card__block__text__in__paragraph">
               <p class="content-team-card__block__text__in__paragraph__NSP">
-                Фамилия Имя
+                Фокин Тимофей
               </p>
-              <p class="content-team-card__block__text__in__paragraph__position">Занимается тем то тем то,
-                бла, бла,бла,бла,бла.</p>
+              <p class="content-team-card__block__text__in__paragraph__position">Заместитель директора, специалист в области электротехники.</p>
             </div>
           </div>
         </div>
         <div class="content-team-card__block col-lg-3 col-md-6 my-1 text-center animated fadeInUp">
           <div class="row">
             <div class="col-12 content-team-card__block__image">
-              <img src="{{asset('images/main_content/img_no_photo/no_photo.png')}}" alt="no_photo">
+              <img src="{{asset('images/main_content/team/employee_3.png')}}" alt="employee_3">
             </div>
             <div class="col-12 content-team-card__block__text__in__paragraph">
               <p class="content-team-card__block__text__in__paragraph__NSP">
-                Фамилия Имя
+                Толмачёв Виктор
               </p>
-              <p class="content-team-card__block__text__in__paragraph__position">Занимается тем то тем то,
-                бла, бла,бла,бла,бла.</p>
+              <p class="content-team-card__block__text__in__paragraph__position">Специалист в обсласти монтажных работ.</p>
             </div>
           </div>
         </div>
