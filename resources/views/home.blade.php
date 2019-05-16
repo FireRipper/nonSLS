@@ -12,7 +12,7 @@
               </div>
             @endif
           </div>
-          <h2>Личный кабинет {{Auth::user()->name}}</h2>
+          <h2>Личный кабинет {{auth()->user()->name}}</h2>
         </div>
         <div class="row">
           <div class="col-md-3 text-center">

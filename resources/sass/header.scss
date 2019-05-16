@@ -3,6 +3,10 @@ header {
   border-bottom: 1px solid #cbd6e2;
 }
 
+.navbar-collapse{
+  transition: .4s;
+}
+
 #navbar-brand__logo__img {
   width: 75px;
 }

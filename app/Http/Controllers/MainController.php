@@ -2,45 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
-  //show main page
-  public function getMain()
-  {
-    $comments = DB::table('comments')->paginate(10);
+    //show main page
+    public function getMain()
+    {
+        $comments = Comment::leftJoin('users', 'users.id', '=', 'comments.user_id')
+            ->paginate(5);
 
-    $titles = 'Лаборатория нестандартных решений';
+        $titles = 'Лаборатория нестандартных решений';
 
-    return view('welcome', ['comments' => $comments])->with('titles', $titles);
-  }
+        return view('welcome', ['comments' => $comments])->with('titles', $titles);
+    }
 
-  //show services page
-  public function getServices()
-  {
-    /*config('app.locale');*/
-    $titles = 'Сервисы - Лаборатория нестандртных решений';
+    //show services page
+    public function getServices()
+    {
+        /*config('app.locale');*/
+        $titles = 'Сервисы - Лаборатория нестандртных решений';
 
-    return view('services')->with('titles', $titles);
-  }
+        return view('services')->with('titles', $titles);
+    }
 
-  //show contact page
-  public function getContact()
-  {
+    //show contact page
+    public function getContact()
+    {
 
-    $titles = 'Контакты - Лаборатория нестандартных решений';
+        $titles = 'Контакты - Лаборатория нестандартных решений';
 
-    return view('contact')->with('titles', $titles);
-  }
+        return view('contact')->with('titles', $titles);
+    }
 
-  //show request page
-  public function getRequest()
-  {
+    //show request page
+    public function getRequest()
+    {
 
-    $titles = 'Подача заявки - Лаборатория нестандартных решений';
+        $titles = 'Подача заявки - Лаборатория нестандартных решений';
 
-    return view('request')->with('titles', $titles);
-  }
+        return view('request')->with('titles', $titles);
+    }
 }

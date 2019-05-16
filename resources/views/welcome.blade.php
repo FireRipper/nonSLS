@@ -204,7 +204,7 @@
                 <label for="comment">Напишите отзыв</label>
                 <textarea class="form-control {{$errors->has('comment') ? 'is-invalid' : ''}}" name="comment"
                           id="comment"
-                          rows="3" placeholder="Ваш комментарий" required></textarea>
+                          rows="3" placeholder="Ваш комментарий"></textarea>
                 @if ($errors->has('comment'))
                   <span class="invalid-feedback text-right" role="alert">
                                         <strong>{{ $errors->first('comment') }}</strong>
@@ -237,11 +237,14 @@
         <hr>
       </div>
       <div class="col-md-9">
-        <p class="text-muted">Прокомментируйте первым!</p>
+        @if (!count($comments))
+          <p class="text-muted">Прокомментируйте первым!</p>
+        @endif
         @foreach($comments as $comment)
-          <div class="public-user-comment__user__name d-inline">{{ $comment-> name }}</div>
-          <p class="public-user-comment__user__text">{{ $comment-> comment }}</p>
+          <div class="public-user-comment__user__name d-inline">{{ $comment->name }}</div>
+          <p class="public-user-comment__user__text">{{ $comment->comment }}</p>
         @endforeach
+          {{$comments}}
       </div>
     </div>
   </div>
