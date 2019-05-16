@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@getMain')->name('main');
+
+Route::post('/','CommentController@store');
+
+Route::get('services', 'MainController@getServices')->name('services');
+
+Route::get('contacts', 'MainController@getContact')->name('contacts');
+
+Route::get('request', 'MainController@getRequest')->name('request');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

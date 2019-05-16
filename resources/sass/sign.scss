@@ -1,0 +1,129 @@
+.form-registration, .form-authorization {
+  padding: 30px;
+  border: 1px solid #eaf0f6;
+  border-radius: .5em;
+  box-shadow: $shadow__bold__bluer;
+}
+
+.form-registration__text__label__bluer, .form-authorization__text__label__bluer, .form-authorization-registration__header h2 {
+  color: $bluer;
+}
+
+.form-authorization-registration__header__h2 {
+  font-size: calcFluidFontSize(22, 28, 480, 1280);
+}
+
+.form-registration-authorization__style__input {
+  text-align: center;
+  border-radius: .35rem;
+  transition: 0.25s;
+  border: 1px solid $bluer;
+  background-color: #43dbdb3d;
+}
+
+.form-registration__bg__image:before {
+  content: '';
+  position: absolute;
+  background: url("/images/sign_page/chemical_vessels/chemical_vessels.png") center;
+  transform-origin: center;
+  top: 82%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.form-authorization__bg__image:before {
+  content: '';
+  position: absolute;
+  background: url("/images/sign_page/chemical_vessels/chemical_vessels.png") center;
+  transform-origin: center;
+  top: 80%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.form-control__color__shadow__bluer:focus {
+  box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+}
+
+.form-registration__btn__submit, .form-authorization__btn__submit {
+  text-align: center;
+  transition: all .7s;
+  background: #4CD137;
+  width: 100%;
+  color: $lighter;
+  opacity: .8;
+  border: 1px solid #4CD137;
+}
+
+.form-registration__btn__submit:hover, .form-authorization__btn__submit:hover {
+  box-shadow: 0 3px 6px rgba(76, 209, 55, 0.16), 0 3px 6px rgba(76, 209, 55, 0.23);
+  color: $lighter;
+  opacity: 1;
+}
+
+.form-authorization__remember__text {
+  color: $bluer;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.form-authorization__fa__icon {
+  &:hover {
+    text-decoration: none;
+  }
+  .form-authorization__fa__icon__style {
+    font-size: calcFluidFontSize(14, 18, 480, 1280);
+    border: 1px solid #ffae2e;
+    padding: .5rem;
+    color: #ffae2e;
+    background: #ffae2e1f;
+    transition: .5s;
+    &:hover{
+      color: $light;
+      background: #ffae2e;
+    }
+  }
+}
+
+
+.form-registration__btn__submit:focus, .form-authorization__btn__submit:focus {
+  box-shadow: 0 0 0 0.2rem rgba(76, 209, 55, 0.35);
+}
+
+.form-registration__btn__link__login a {
+  background-color: #03A9F4;
+  color: $lighter;
+  padding: 7px 60px;
+  border-radius: .3rem;
+  opacity: 0.7;
+  transition: 0.4s;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(53, 146, 189, 0.16), 0 3px 6px rgba(53, 146, 189, 0.23);
+  }
+}
+
+@media screen and (max-width: 992px) {
+   .form-authorization__btn__submit {
+    width: 100%;
+  }
+  .form-registration__bg__image:before {
+    top: 90%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .form-registration__header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .form-registration__header h2 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,129 @@
+$blue: #339999;
+
+.service-content__block__background {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0;
+  z-index: -1;
+
+  .service-content__background {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: url("/images/services_content/software1.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: #1783f1;
+      opacity: .5;
+    }
+  }
+}
+
+.service-content__h2__header {
+  h2 {
+    padding: calc(11px + 10%);
+    margin: 0;
+    font-size: 3.1vw;
+    color: #f7f7f7;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+#service-content-info-card {
+  background: #fafdfa;
+  padding: 30px 3px;
+  margin: -20px -15px;
+  box-shadow: $shadow__bold__darker;
+
+  .service-content-info-card__style__all__block {
+    background: #fbfbfb;
+    margin-bottom: 5px;
+
+    h3 {
+      padding: 10px 0;
+      font-size: calcFluidFontSize(16, 28, 480, 1280);
+      color: #3f536e;
+    }
+
+    article {
+      font-size: calcFluidFontSize(12, 16, 480, 1280);
+      outline: none;
+      overflow: hidden;
+      transition: height .5s;
+    }
+
+    a[data-readmore-toggle] {
+      transition: 0.5s;
+      display: block;
+      color: #00cade;
+      border: 1px solid #00cade;
+      background: #00cade30;
+      width: 25%;
+      text-align: center;
+      border-radius: 0.25rem;
+      padding: 5px 0;
+      margin: 15px 0 10px 0;
+      font-size: calcFluidFontSize(14, 16, 480, 1280);
+      @media screen and (max-width:992px) {
+        &{
+          width: 50%;
+        }
+      }
+    }
+
+    .fa-angle-double-right {
+      padding: 0 0 0 5px;
+    }
+
+    a[data-readmore-toggle]:hover {
+      text-decoration: none;
+      color: #fff;
+      background: #00cade;
+    }
+
+    .service-content-info-card__style__apply__request {
+      font-size: calcFluidFontSize(14, 18, 480, 1280);
+      transition: 0.7s;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .service-content-info-card__image{
+    img {
+      height: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service-content-info-card__image{
+    img {
+      height: 70px;
+    }
+  }
+}
