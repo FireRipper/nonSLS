@@ -93,7 +93,7 @@
             <div class="form-group">
               <label for="exampleFormControlTextarea1" class="form-request__text__label__bluer">Техническое
                 задание</label>
-              <textarea class="form-control form-request__style__input" id="exampleFormControlTextarea1"
+              <textarea class="form-control form-request__style__input form-request__style__textarea" id="exampleFormControlTextarea1"
                         rows="3"></textarea>
             </div>
             <div class="form-group">

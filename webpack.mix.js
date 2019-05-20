@@ -18,4 +18,5 @@ mix.js('resources/js/app.js', 'public/js')
 	.options({
 		processCssUrls: false
 	})
-	.copyDirectory('resources/images', 'public/images');
+	.copyDirectory('resources/images', 'public/images')
+	.copyDirectory('resources/fonts', 'public/fonts');

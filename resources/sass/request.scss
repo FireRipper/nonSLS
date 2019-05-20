@@ -55,6 +55,11 @@
       border: 1px solid #eaf0f6;
     }
 
+    .form-request__style__textarea{
+      resize: none;
+      height: 150px;
+    }
+
     .form-request__style__input{
       border-color: $bluer;
       background: #00cade12;
