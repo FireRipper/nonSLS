@@ -1284,7 +1284,7 @@ header {
 }
 #content-home .content-home__column__menu .content-home__column__menu__img {
   border-radius: 0.25rem;
-  height: calc(50% - 50px);
+  height: 169px;
   box-shadow: 0 0.125rem 0.25rem rgba(38, 144, 224, 0.44);
   margin: 10px 0;
 }
@@ -1331,6 +1331,34 @@ header {
 }
 #content-home-user .form-home__user__btn__submit:focus {
   box-shadow: none !important;
+}
+#content-home-user .content-home-user__request__h2 {
+  font-size: calc(0.0075 * 100vw + 16.4px);
+  color: #33475b;
+}
+#content-home-user .content-home-user__request__content {
+  box-shadow: 0 3px 6px rgba(47, 53, 66, 0.16), 0 3px 6px rgba(51, 71, 91, 0.23);
+  border-radius: 1rem;
+}
+#content-home-user .content-home-user__request__content .content-home-user__request__span {
+  font-size: calc(0.00625 * 100vw + 15px);
+  color: #20c997;
+  padding: 10px 0;
+}
+#content-home-user .content-home-user__request__content .content-home-user__request__table__th, #content-home-user .content-home-user__request__content .content-home-user__request__table__td {
+  font-size: calc(0.00375 * 100vw + 12.2px);
+  color: #33475b;
+}
+#content-home-user .content-home-user__technical__task__h2 {
+  font-size: calc(0.0075 * 100vw + 16.4px);
+  color: #33475b;
+}
+#content-home-user .content-home-user__technical__task__h2 .content-home-user__technical__task {
+  font-size: calc(0.005 * 100vw + 13.6px);
+}
+#content-home-user .content-home-user__report__h2 {
+  font-size: calc(0.0075 * 100vw + 16.4px);
+  color: #33475b;
 }
 
 @media screen and (max-width: 1140px) {

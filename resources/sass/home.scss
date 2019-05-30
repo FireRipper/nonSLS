@@ -9,7 +9,7 @@
 
     .content-home__column__menu__img {
       border-radius: .25rem;
-      height: calc(50% - 50px);
+      height: 169px;
       box-shadow: 0 0.125rem 0.25rem rgba(38, 144, 224, 0.44);
       margin: 10px 0;
     }
@@ -52,7 +52,6 @@
     }
   }
   .form-home__user__btn__submit{
-
     background: #12f3053b;
     border: 1px solid $green;
     color: $green;
@@ -66,6 +65,34 @@
     &:focus{
       box-shadow: none !important;
     }
+  }
+  .content-home-user__request__h2 {
+    font-size: calcFluidFontSize(20, 26, 480, 1280);
+    color: $darker;
+  }
+  .content-home-user__request__content{
+    box-shadow: $shadow__bold__darker;
+    border-radius: 1rem;
+    .content-home-user__request__span{
+      font-size: calcFluidFontSize(18, 23, 480, 1280);
+      color: #20c997;
+      padding: 10px 0;
+    }
+    .content-home-user__request__table__th,.content-home-user__request__table__td{
+      font-size: calcFluidFontSize(14, 17, 480, 1280);
+      color: $darker;
+    }
+  }
+  .content-home-user__technical__task__h2{
+    font-size: calcFluidFontSize(20, 26, 480, 1280);
+    color: $darker;
+    .content-home-user__technical__task{
+      font-size: calcFluidFontSize(16, 20, 480, 1280);
+    }
+  }
+  .content-home-user__report__h2{
+    font-size: calcFluidFontSize(20, 26, 480, 1280);
+    color: $darker;
   }
 }
 
