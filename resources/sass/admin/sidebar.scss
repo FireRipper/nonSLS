@@ -1,0 +1,47 @@
+.content-admin__h2 {
+  color: $darker;
+  font-size: calcFluidFontSize(16, 26, 480, 1280);
+  font-weight: 600;
+}
+
+.bg-panel {
+  background: #4f5a6e;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  .brand-admin__panel{
+    margin: 0;
+    background: #8690a2;
+    box-shadow: $shadow__darker;
+    .brand-admin__panel__text{
+      color: $light;
+      font-weight: 600;
+      font-size: calcFluidFontSize(12, 20, 480, 1280);
+      padding: 2rem 0;
+    }
+  }
+  .nav-link.active {
+    color: #61dafb;
+  }
+  .nav-link{
+    font-size: calcFluidFontSize(11, 18, 480, 1280);
+    font-weight: 600;
+    color: $lighter;
+    &:hover{
+      .sidebar-admin__i{
+        opacity: 1;
+      }
+    }
+    .sidebar-admin__i{
+      opacity: .7;
+      transition: .3s;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.content-admin__user__table__border__radius {
+  border-radius: 0.8rem;
+  .table-hover {
+    tbody{
+      tr{
+        &:hover{
+          background: #8c9eff4a;
+        }
+      }
+    }
+  }
+}
+
+#content-admin__user__table {
+  .content-admin__user__thead {
+    background-color: #8c9eff;
+    color: $light;
+    box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+  }
+
+  .content-admin__user__tbody {
+    background: #fff;
+  }
+
+  .content-admin__user__table__thead__th {
+    font-size: calcFluidFontSize(14, 16, 480, 1280);
+  }
+
+  .content-admin__user__table__th {
+    font-size: calcFluidFontSize(14, 15, 480, 1280);
+    color: $darker;
+  }
+
+  .content-admin__user__table__td {
+    font-size: calcFluidFontSize(12, 14, 480, 1280);
+    color: $darker;
+  }
+}
+
+.content-admin__user__pagination {
+  .page-item {
+    padding: 0 5px;
+  }
+
+  .page-item.active {
+    .page-link {
+      color: $light !important;
+      background: #2955c8 !important;
+      border-color: #2955c8;
+      box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+    }
+  }
+
+  .page-link {
+    border-radius: 50% !important;
+    border: 0;
+    color: #2955c8;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+    }
+  }
+}

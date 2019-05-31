@@ -36930,6 +36930,17 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/sass/admin/admin.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin/admin.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -36953,15 +36964,16 @@ if (token) {
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/bootstrap.scss ***!
-  \*********************************************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/bootstrap.scss ./resources/sass/admin/admin.scss ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\www\nonSLS\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\xampp\htdocs\www\nonSLS\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\www\nonSLS\resources\sass\bootstrap.scss */"./resources/sass/bootstrap.scss");
+__webpack_require__(/*! C:\xampp\htdocs\www\nonSLS\resources\sass\bootstrap.scss */"./resources/sass/bootstrap.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\www\nonSLS\resources\sass\admin\admin.scss */"./resources/sass/admin/admin.scss");
 
 
 /***/ })

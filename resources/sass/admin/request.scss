@@ -1,0 +1,16 @@
+.content-admin__request__content {
+  box-shadow: $shadow__bold__bluer;
+  background-color: #fff;
+  border-radius: .5rem;
+
+  .content-admin__request__span {
+    font-size: calcFluidFontSize(14, 20, 480, 1280);
+    color: $indigo;
+    padding: 20px 0;
+  }
+
+  .content-admin__request__table__th, .content-admin__request__table__td {
+    font-size: calcFluidFontSize(14, 17, 480, 1280);
+    color: $darker;
+  }
+}

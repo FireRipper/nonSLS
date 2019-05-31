@@ -52,7 +52,7 @@
                           value="{{Auth::user()->name}}"
                         @else
                         @endauth
-                      @endif{{--pattern="[а-яА-ЯёЁ, a-zA-Z]{2,64}" required--}}>
+                      @endif readonly>
                 <div class="invalid-feedback">
                   Введите имя, используя русские или латинские буквы!
                 </div>
@@ -62,7 +62,7 @@
                   фамилию</label>
                 <input type="text" name="middle_name"
                        class="form-request__style__input form-control form-control__color__shadow__bluer"
-                       placeholder="Фамилия" {{--pattern="[а-яА-ЯёЁ, a-zA-Z]{2,64}" required--}}>
+                       placeholder="Фамилия" value="{{auth()->user()->middle_name}}" readonly>
                 <div class="invalid-feedback">
                   Введите фамилию, используя русские или латинские буквы!
                 </div>
@@ -72,7 +72,7 @@
                   отчество</label>
                 <input type="text" name="last_name"
                        class="form-request__style__input form-control form-control__color__shadow__bluer"
-                       placeholder="Отчество" {{--pattern="[а-яА-ЯёЁ, a-zA-Z]{2,64}" required--}}>
+                       placeholder="Отчество"  value="{{auth()->user()->last_name}}" readonly>
                 <div class="invalid-feedback">
                   Введите отчество, используя русские или латинские буквы!
                 </div>

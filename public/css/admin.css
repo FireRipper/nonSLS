@@ -1,0 +1,198 @@
+html, body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Kurale", serif !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  height: 4px;
+  background-color: #33475b;
+}
+
+.navbar-toggler__border__color {
+  border-color: #33475b !important;
+}
+
+#btn-go__to__top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  cursor: pointer;
+  border: none;
+  background-color: #339999;
+  bottom: 40px;
+  right: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: #ecf0f1;
+  font-size: 22px;
+  opacity: 0.8;
+  outline: 0;
+}
+#btn-go__to__top:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+  box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+  transition: all 0.7s;
+}
+
+.content-admin__h2 {
+  color: #33475b;
+  font-size: calc(0.0125 * 100vw + 10px);
+  font-weight: 600;
+}
+
+.bg-panel {
+  background: #4f5a6e;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+.sidebar .brand-admin__panel {
+  margin: 0;
+  background: #8690a2;
+  box-shadow: 0 1px 3px rgba(47, 53, 66, 0.12), 0 1px 2px rgba(51, 71, 91, 0.24);
+}
+.sidebar .brand-admin__panel .brand-admin__panel__text {
+  color: #f8f9fa;
+  font-weight: 600;
+  font-size: calc(0.01 * 100vw + 7.2px);
+  padding: 2rem 0;
+}
+.sidebar .nav-link.active {
+  color: #61dafb;
+}
+.sidebar .nav-link {
+  font-size: calc(0.00875 * 100vw + 6.8px);
+  font-weight: 600;
+  color: #ecf0f1;
+}
+.sidebar .nav-link:hover .sidebar-admin__i {
+  opacity: 1;
+}
+.sidebar .nav-link .sidebar-admin__i {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.content-admin__request__content {
+  box-shadow: 0 3px 6px rgba(51, 153, 153, 0.16), 0 3px 6px rgba(51, 153, 153, 0.23);
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+.content-admin__request__content .content-admin__request__span {
+  font-size: calc(0.0075 * 100vw + 10.4px);
+  color: #6574cd;
+  padding: 20px 0;
+}
+.content-admin__request__content .content-admin__request__table__th, .content-admin__request__content .content-admin__request__table__td {
+  font-size: calc(0.00375 * 100vw + 12.2px);
+  color: #33475b;
+}
+
+#content-admin-technical-task .content-admin-technical-task__label {
+  color: #33475b;
+  font-weight: 600;
+  font-size: calc(0.005 * 100vw + 11.6px);
+}
+#content-admin-technical-task .content-admin-technical-task__style__input, #content-admin-technical-task .content-admin-technical-task__style__textarea {
+  font-size: calc(0.005 * 100vw + 9.6px);
+  border: 0;
+  box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  resize: none;
+}
+#content-admin-technical-task .content-admin-technical-task__style__input:focus, #content-admin-technical-task .content-admin-technical-task__style__textarea:focus {
+  box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+}
+#content-admin-technical-task .content-admin-technical-task__submit {
+  color: #ecf0f1;
+  opacity: 0.9;
+  font-weight: 600;
+  font-size: calc(0.0025 * 100vw + 11.8px);
+  background-color: #2955c8;
+  border-color: #3f6ad8;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#content-admin-technical-task .content-admin-technical-task__submit:hover {
+  opacity: 1;
+  box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+}
+#content-admin-technical-task .content-admin-technical-task__submit:focus {
+  box-shadow: none;
+}
+
+.content-admin__user__table__border__radius {
+  border-radius: 0.8rem;
+}
+.content-admin__user__table__border__radius .table-hover tbody tr:hover {
+  background: #8c9eff4a;
+}
+
+#content-admin__user__table .content-admin__user__thead {
+  background-color: #8c9eff;
+  color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+}
+#content-admin__user__table .content-admin__user__tbody {
+  background: #fff;
+}
+#content-admin__user__table .content-admin__user__table__thead__th {
+  font-size: calc(0.0025 * 100vw + 12.8px);
+}
+#content-admin__user__table .content-admin__user__table__th {
+  font-size: calc(0.00125 * 100vw + 13.4px);
+  color: #33475b;
+}
+#content-admin__user__table .content-admin__user__table__td {
+  font-size: calc(0.0025 * 100vw + 10.8px);
+  color: #33475b;
+}
+
+.content-admin__user__pagination .page-item {
+  padding: 0 5px;
+}
+.content-admin__user__pagination .page-item.active .page-link {
+  color: #f8f9fa !important;
+  background: #2955c8 !important;
+  border-color: #2955c8;
+  box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+}
+.content-admin__user__pagination .page-link {
+  border-radius: 50% !important;
+  border: 0;
+  color: #2955c8;
+}
+.content-admin__user__pagination .page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+}
