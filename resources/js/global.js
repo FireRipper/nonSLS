@@ -19,5 +19,9 @@ $(document).ready(() => {
 		moreLink: '<a href="#">Показать текст  <i class="fas fa-angle-double-right"></i></a>',
 		lessLink: '<a href="#">Скрыть <i class="fas fa-angle-double-up"></i></a>'
 	})
+
+	$('#sidebarCollapse').on('click',  () => {
+		$('#sidebar').toggleClass('active')
+	})
 })
 

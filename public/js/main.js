@@ -10753,6 +10753,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     moreLink: '<a href="#">Показать текст  <i class="fas fa-angle-double-right"></i></a>',
     lessLink: '<a href="#">Скрыть <i class="fas fa-angle-double-up"></i></a>'
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#sidebarCollapse').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#sidebar').toggleClass('active');
+  });
 });
 
 /***/ }),

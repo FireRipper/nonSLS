@@ -15,47 +15,62 @@
   <title>{{ config('app.name', 'Admin-panel') }}</title>
 </head>
 <body>
-<div class="container-fluid">
-  <div class="row">
-    <nav class="col-lg-2 col-md-3 d-none d-md-block bg-panel sidebar">
-      <div class="row brand-admin__panel">
-        <div class="col-12 d-flex justify-content-center">
-            <div class="brand-admin__panel__text">Laboratory of non-standard solution</div>
-        </div>
-      </div>
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" href="{{route('admin')}}">
-              <i class="fas fa-home sidebar-admin__i"></i>
-              Главная <span class="sr-only">(current)</span>
-            </a>
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Laboratory of non-standard solution</h3>
+      <strong>LNSS</strong>
+    </div>
+
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a href="{{route('admin')}}">
+          <i class="fas fa-home sidebar-admin__i"></i>
+          Главная
+        </a>
+      </li>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="fas fa-mail-bulk sidebar-admin__i"></i>
+          Заявки
+        </a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="{{route('admin-request')}}">Входящие</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('admin-request')}}">
-              <i class="fas fa-mail-bulk sidebar-admin__i"></i>
-              Заявки
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('admin-task')}}">
-              <i class="fas fa-tasks sidebar-admin__i"></i>
-              Технические задания
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('admin-user')}}">
-              <i class="fas fa-address-book sidebar-admin__i"></i>
-              Пользователи
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('admin-report')}}">
-              <i class="fas fa-clipboard-list sidebar-admin__i"></i>
-              Отчеты
-            </a>
+          <li>
+            <a href="javascript:void(0)">Прочитаные</a>
           </li>
         </ul>
+        <a href="{{route('admin-task')}}">
+          <i class="fas fa-tasks sidebar-admin__i"></i>
+          Технические задания
+        </a>
+      </li>
+      <li>
+        <a href="{{route('admin-user')}}">
+          <i class="fas fa-address-book sidebar-admin__i"></i>
+          Пользователи
+        </a>
+      </li>
+      <li>
+        <a href="{{route('admin-report')}}">
+          <i class="fas fa-clipboard-list sidebar-admin__i"></i>
+          Отчеты
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>
+          <span>Скрыть меню</span>
+        </button>
       </div>
     </nav>
     @yield('panel_content')
