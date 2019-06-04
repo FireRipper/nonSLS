@@ -20,18 +20,18 @@
           <div class="request-content__image__man__write__request"></div>
         </div>
         <div class="col-sm-9 mt-sm-5 mt-3">
-          <h3 class="request-content__h3"> Для того что бы подать заявление, нужно заполниит форму ниже! </h3>
+          <h3 class="request-content__h3"> Для того что бы подать заявление, нужно заполнить форму ниже! </h3>
           <p class="request-content__what__do__p">Что вам нужно сделать:</p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item request-content__what__do__li">➀ Заполните поля имя, фамилия,
-              отчество - данные поля отображают ваши данные получателю заявления.
+              отчество - данные поля отображают данные о Вас получателю заявления.
             </li>
             <li class="list-group-item request-content__what__do__li">➁ Выберите услугу из списка - данное
-              поля отображают услугу которую вы выюрали получателю заявления.
+              поля отображает услугу которую вы выбрали получателю заявления.
             </li>
             <li class="list-group-item request-content__what__do__li">➂ Заполните поле "Техническое
               задание" - расскажите вообщем что бы Вы хотели сделать на объекте,
-              укажите место нахождение (где необходимо проводить работы),
+              укажите место нахождение (где необходимо проводить работы по уставовке оборудования),
               укажите желаемый срок в днях.
             </li>
           </ul>
@@ -47,12 +47,12 @@
                 <input id="form-request__name" type="text" name="first_name"
                        class="form-request__style__input form-control form-control__color__shadow__bluer"
                        placeholder="Имя"
-                      @if (Route::has('login'))
-                        @auth
-                          value="{{Auth::user()->name}}"
-                        @else
-                        @endauth
-                      @endif readonly>
+                       @if (Route::has('login'))
+                       @auth
+                       value="{{Auth::user()->name}}"
+                       @else
+                       @endauth
+                       @endif readonly>
                 <div class="invalid-feedback">
                   Введите имя, используя русские или латинские буквы!
                 </div>
@@ -62,7 +62,14 @@
                   фамилию</label>
                 <input type="text" name="middle_name"
                        class="form-request__style__input form-control form-control__color__shadow__bluer"
-                       placeholder="Фамилия" value="{{auth()->user()->middle_name}}" readonly>
+                       placeholder="Фамилия"
+                       @if (Route::has('login'))
+                         @auth
+                            value="{{auth()->user()->middle_name}}"
+                           @else
+                         @endauth
+                       @endif
+                       readonly>
                 <div class="invalid-feedback">
                   Введите фамилию, используя русские или латинские буквы!
                 </div>
@@ -72,7 +79,14 @@
                   отчество</label>
                 <input type="text" name="last_name"
                        class="form-request__style__input form-control form-control__color__shadow__bluer"
-                       placeholder="Отчество"  value="{{auth()->user()->last_name}}" readonly>
+                       placeholder="Отчество"
+                       @if (Route::has('login'))
+                         @auth
+                            value="{{auth()->user()->last_name}}"
+                           @else
+                         @endauth
+                       @endif
+                       readonly>
                 <div class="invalid-feedback">
                   Введите отчество, используя русские или латинские буквы!
                 </div>
@@ -93,7 +107,8 @@
             <div class="form-group">
               <label for="exampleFormControlTextarea1" class="form-request__text__label__bluer">Техническое
                 задание</label>
-              <textarea class="form-control form-request__style__input form-request__style__textarea" id="exampleFormControlTextarea1"
+              <textarea class="form-control form-request__style__input form-request__style__textarea"
+                        id="exampleFormControlTextarea1"
                         rows="3"></textarea>
             </div>
             <div class="form-group">

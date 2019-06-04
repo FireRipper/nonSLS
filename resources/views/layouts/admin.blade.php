@@ -19,43 +19,45 @@
   <!-- Sidebar  -->
   <nav id="sidebar">
     <div class="sidebar-header">
-      <h3>Laboratory of non-standard solution</h3>
-      <strong>LNSS</strong>
+      <h3 class="sidebar-header__h3">Laboratory of non-standard solutions</h3>
+      <strong class="sidebar-header__strong">LNSS</strong>
     </div>
 
-    <ul class="list-unstyled components">
-      <li class="active">
-        <a href="{{route('admin')}}">
+    <ul class="list-unstyled components sidebar-list__ul">
+      <li class="active sidebar-list-ul__li">
+        <a href="{{route('admin')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-home sidebar-admin__i"></i>
           Главная
         </a>
       </li>
-      <li>
-        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+      <li class="sidebar-list-ul__li">
+        <a href="#pageSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-list-ul-li__a">
           <i class="fas fa-mail-bulk sidebar-admin__i"></i>
           Заявки
         </a>
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-          <li>
-            <a href="{{route('admin-request')}}">Входящие</a>
+        <ul class="collapse list-unstyled sidebar-list__submenu__ul" id="pageSubmenu">
+          <li class="sidebar-list__submenu__li">
+            <a href="{{route('admin-request')}}" class="sidebar-list-ul-li__a sidebar-list-ul-li__submenu__a">Входящие</a>
           </li>
-          <li>
-            <a href="javascript:void(0)">Прочитаные</a>
+          <li class="sidebar-list__submenu__li">
+            <a href="{{route('admin-request-success')}}" class="sidebar-list-ul-li__a sidebar-list-ul-li__submenu__a">Прочитаные</a>
           </li>
         </ul>
-        <a href="{{route('admin-task')}}">
+      </li>
+      <li class="sidebar-list-ul__li">
+        <a href="{{route('admin-task')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-tasks sidebar-admin__i"></i>
           Технические задания
         </a>
       </li>
-      <li>
-        <a href="{{route('admin-user')}}">
+      <li class="sidebar-list-ul__li">
+        <a href="{{route('admin-user')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-address-book sidebar-admin__i"></i>
           Пользователи
         </a>
       </li>
-      <li>
-        <a href="{{route('admin-report')}}">
+      <li class="sidebar-list-ul__li">
+        <a href="{{route('admin-report')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-clipboard-list sidebar-admin__i"></i>
           Отчеты
         </a>
@@ -69,7 +71,7 @@
       <div class="container-fluid">
         <button type="button" id="sidebarCollapse" class="btn btn-info">
           <i class="fas fa-align-left"></i>
-          <span>Скрыть меню</span>
+          <span class="content-admin__span">Скрыть меню</span>
         </button>
       </div>
     </nav>

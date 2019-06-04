@@ -25,6 +25,8 @@ Route::get('panel','AdminController@index')->name('admin');
 
 Route::get('panel/request','RequestController@index')->name('admin-request');
 
+Route::get('panel/request/success', 'RequestSuccessController@index')->name('admin-request-success');
+
 Route::get('panel/technical-task', 'TechnicalTaskController@index')->name('admin-task');
 
 Route::get('panel/user', 'UserController@index')->name('admin-user');
