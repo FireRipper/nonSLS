@@ -11,4 +11,9 @@ class RequestController extends Controller
     {
         return view('admin/adminrequest');
     }
+
+    public function show()
+    {
+        // get request + all reports
+    }
 }

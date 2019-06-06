@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <th scope="row" class="content-admin__request__table__th">E-mail</th>
-            <td class="content-admin__request__table__td">simon@icloud.com</td>
+            <td class="content-admin__request__table__td copy-value">simon@icloud.com</td>
           </tr>
           <tr>
             <th scope="row" class="content-admin__request__table__th">Услуга</th>

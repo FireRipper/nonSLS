@@ -50,6 +50,9 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right header-dropdown-menu__style" aria-labelledby="navbarDropdown">
                 <a href="{{ url('/home') }}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-portrait"></i> Личный кабинет</a>
+                @if (Auth::user()->isAdmin)
+                  <a href="{{route('admin')}}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-lock"></i> Админ панель</a>
+                @endif
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item header-menu__dropdown__logout" href="{{ route('logout') }}"
                    onclick="event.preventDefault();

@@ -2,6 +2,10 @@ import $ from 'jquery'
 import readmore from 'readmore-js/readmore.min'
 
 $(document).ready(() => {
+	const sideBar = $('#sidebar')
+	const contentSpan = $('.content-admin__span')
+	const sideBarSpan = $('.sidebar-list-ul-li-a__span')
+
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 1000) {
 			$('#btn-go__to__top').fadeIn()
@@ -20,8 +24,18 @@ $(document).ready(() => {
 		lessLink: '<a href="#">Скрыть <i class="fas fa-angle-double-up"></i></a>'
 	})
 
+
 	$('#sidebarCollapse').on('click',  () => {
-		$('#sidebar').toggleClass('active')
+		sideBar.toggleClass('active')
+		if(sideBar.hasClass('active')){
+			contentSpan.text('')
+			sideBarSpan.hide()
+		} else {
+			contentSpan.text('Скрыть меню')
+			sideBarSpan.show()
+		}
 	})
+
+
 })
 

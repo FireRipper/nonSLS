@@ -164,12 +164,15 @@
  MEDIAQUERIES
  ----------------------------------------------------- */
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   #sidebar {
     min-width: 80px;
     max-width: 80px;
     text-align: center;
     margin-left: -80px !important;
+  }
+  .sidebar-list-ul-li-a__span{
+    display: none !important;
   }
   .dropdown-toggle{
     &::after{
@@ -197,6 +200,7 @@
       .sidebar-list__submenu__ul{
         .sidebar-list-ul-li__submenu__a{
           padding-left: 10px !important;
+          font-size: 0.75rem !important;
         }
       }
       .sidebar-list-ul__li{

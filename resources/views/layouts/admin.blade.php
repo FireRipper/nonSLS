@@ -15,6 +15,8 @@
   <title>{{ config('app.name', 'Admin-panel') }}</title>
 </head>
 <body>
+@php $currentRoute = Route::currentRouteName()
+    @endphp
 <div class="wrapper">
   <!-- Sidebar  -->
   <nav id="sidebar">
@@ -22,18 +24,27 @@
       <h3 class="sidebar-header__h3">Laboratory of non-standard solutions</h3>
       <strong class="sidebar-header__strong">LNSS</strong>
     </div>
-
     <ul class="list-unstyled components sidebar-list__ul">
-      <li class="active sidebar-list-ul__li">
+      <li class="sidebar-list-ul__li
+          @if($currentRoute === 'admin')
+          active
+          @endif">
         <a href="{{route('admin')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-home sidebar-admin__i"></i>
-          Главная
+          <span class="sidebar-list-ul-li-a__span">
+            Главная
+          </span>
         </a>
       </li>
-      <li class="sidebar-list-ul__li">
+      <li class="sidebar-list-ul__li
+             @if($currentRoute === 'admin-request' || $currentRoute === 'admin-request-success')
+            active
+            @endif">
         <a href="#pageSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-list-ul-li__a">
           <i class="fas fa-mail-bulk sidebar-admin__i"></i>
-          Заявки
+          <span class="sidebar-list-ul-li-a__span">
+            Заявки
+          </span>
         </a>
         <ul class="collapse list-unstyled sidebar-list__submenu__ul" id="pageSubmenu">
           <li class="sidebar-list__submenu__li">
@@ -44,24 +55,39 @@
           </li>
         </ul>
       </li>
-      <li class="sidebar-list-ul__li">
+      <li class="sidebar-list-ul__li
+            @if($currentRoute === 'admin-task')
+            active
+            @endif ">
         <a href="{{route('admin-task')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-tasks sidebar-admin__i"></i>
-          Технические задания
+          <span class="sidebar-list-ul-li-a__span">
+            Технические задания
+          </span>
         </a>
       </li>
-      <li class="sidebar-list-ul__li">
+      <li class="sidebar-list-ul__li
+          @if($currentRoute === 'admin-user')
+          active
+          @endif">
         <a href="{{route('admin-user')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-address-book sidebar-admin__i"></i>
-          Пользователи
+          <span class="sidebar-list-ul-li-a__span">
+            Пользователи
+          </span>
         </a>
       </li>
-      <li class="sidebar-list-ul__li">
+      {{--<li class="sidebar-list-ul__li
+          @if($currentRoute === 'admin-report')
+          active
+          @endif">
         <a href="{{route('admin-report')}}" class="sidebar-list-ul-li__a">
           <i class="fas fa-clipboard-list sidebar-admin__i"></i>
-          Отчеты
+          <span class="sidebar-list-ul-li-a__span">
+            Отчеты
+          </span>
         </a>
-      </li>
+      </li>--}}
     </ul>
   </nav>
 

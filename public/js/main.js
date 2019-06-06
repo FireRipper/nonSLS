@@ -10736,6 +10736,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  var sideBar = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#sidebar');
+  var contentSpan = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin__span');
+  var sideBarSpan = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sidebar-list-ul-li-a__span');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() > 1000) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#btn-go__to__top').fadeIn();
@@ -10754,7 +10757,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     lessLink: '<a href="#">Скрыть <i class="fas fa-angle-double-up"></i></a>'
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#sidebarCollapse').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#sidebar').toggleClass('active');
+    sideBar.toggleClass('active');
+
+    if (sideBar.hasClass('active')) {
+      contentSpan.text('');
+      sideBarSpan.hide();
+    } else {
+      contentSpan.text('Скрыть меню');
+      sideBarSpan.show();
+    }
   });
 });
 

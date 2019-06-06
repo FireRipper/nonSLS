@@ -13,7 +13,7 @@
           <div class="form-group">
             <label for="content-admin-technical-task__e-mail" class="content-admin-technical-task__label">Введите e-mail пользователя</label>
             <input type="email" class="form-control content-admin-technical-task__style__input {{ $errors->has('email') ? ' is-invalid' : '' }}" id="content-admin-technical-task__e-mail"
-                   aria-describedby="content-admin-report__e-mail__help" placeholder="Введите e-mail" autofocus>
+                   aria-describedby="content-admin-report__e-mail__help" placeholder="Введите e-mail">
             @if ($errors->has('email'))
               <span class="invalid-feedback text-right" role="alert">
                   <strong>{{ $errors->first('email') }}</strong>
