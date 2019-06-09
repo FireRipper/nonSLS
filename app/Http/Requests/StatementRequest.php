@@ -24,7 +24,8 @@ class StatementRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'service' => 'required|string|max:191',
+            'task' => 'required'
         ];
     }
 }

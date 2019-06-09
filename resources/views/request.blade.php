@@ -39,17 +39,18 @@
         <h3 class="col-12 text-center request-content__h3__request mt-2 mb-3"><i class="fas fa-paperclip"></i>
           Заява</h3>
         <div class="col-md-8 rounded shadow-lg mb-sm-5 request-content__form">
-          <form id="request-content__form__request" action="javascript:void(0)">
+          <form id="request-content__form__request" method="post" action="{{url('request')}}">
+            @csrf
             <div class="form-row mt-4">
               <div class="form-group col-lg-4">
                 <label class="form-request__text__label__bluer" for="exampleInputName">Введите
                   имя</label>
-                <input id="form-request__name" type="text" name="first_name"
+                <input id="form-request__name" type="text" name="name"
                        class="form-request__style__input form-control form-control__color__shadow__bluer"
                        placeholder="Имя"
                        @if (Route::has('login'))
                        @auth
-                       value="{{Auth::user()->name}}"
+                       value="{{auth()->user()->name}}"
                        @else
                        @endauth
                        @endif readonly>
@@ -95,7 +96,7 @@
             <div class="form-group">
               <label for="inputServices" class="form-request__text__label__bluer">Выберите услугу из
                 списка</label>
-              <select id="inputServices" class="form-request form-control form-request__style__input">
+              <select id="inputServices" name="service" class="form-request form-control form-request__style__input">
                 <option selected>Выберите...</option>
                 <option>Установка Систем Видеонаблюдения</option>
                 <option>Охранная Система, Сигнализация</option>
@@ -108,7 +109,7 @@
               <label for="exampleFormControlTextarea1" class="form-request__text__label__bluer">Техническое
                 задание</label>
               <textarea class="form-control form-request__style__input form-request__style__textarea"
-                        id="exampleFormControlTextarea1"
+                        id="exampleFormControlTextarea1" name="task"
                         rows="3"></textarea>
             </div>
             <div class="form-group">

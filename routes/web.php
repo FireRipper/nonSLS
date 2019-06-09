@@ -21,6 +21,8 @@ Route::get('contacts', 'MainController@getContact')->name('contacts');
 
 Route::get('request', 'MainController@getRequest')->name('request');
 
+Route::post('request', 'RequestController@store');
+
 Route::group(['prefix' => 'panel', 'middleware' => 'only.admin'], function () {
     Route::get('','AdminController@index')->name('admin');
 
