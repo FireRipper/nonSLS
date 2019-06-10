@@ -11,7 +11,41 @@
           @csrf
         </form>
       </div>
-      <div class="content-admin__request__content col-lg-10 mt-sm-3 offset-lg-1 mb-3">
+      <div class="col-12 content-admin__user__pagination">{{$requests}}</div>
+      <div class="col-12">
+        <form action="javascript:void(0)" class="d-none">
+          @csrf
+        </form>
+        <div class="content-admin__user__table__border__radius table-responsive">
+          <table id="content-admin__user__table" class="table table-hover table-responsive">
+            <thead class="content-admin__user__thead">
+            <tr>
+              <th scope="col" class="content-admin__user__table__thead__th">#</th>
+              <th scope="col" class="content-admin__user__table__thead__th">Пользователь</th>
+              <th scope="col" class="content-admin__user__table__thead__th">E-mail</th>
+              <th scope="col" class="content-admin__user__table__thead__th">Сервис</th>
+              <th scope="col" class="content-admin__user__table__thead__th">Услуга</th>
+              <th scope="col" class="content-admin__user__table__thead__th">Дата создания</th>
+              <th scope="col" class="content-admin__user__table__thead__th">Перейти</th>
+            </tr>
+            </thead>
+            <tbody class="content-admin__user__tbody">
+            @foreach($requests as $request)
+              <tr>
+                <th scope="row" class="content-admin__user__table__th">{{ $request->id }}</th>
+                <th scope="row" class="content-admin__user__table__th">{{ $request->userFirstName . ' ' . $request->userLastName}}</th>
+                <th scope="row" class="content-admin__user__table__th">{{ $request->userEmail }}</th>
+                <th scope="row" class="content-admin__user__table__th">{{ $request->service }}</th>
+                <th scope="row" class="content-admin__user__table__th">{{ $request->task }}</th>
+                <th scope="row" class="content-admin__user__table__th">{{ $request->created_at }}</th>
+                <th scope="row"><a href="{{ route('home') }}" role="button" class="btn btn-outline-secondary">Перейти</a></th>
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {{--<div class="content-admin__request__content col-lg-10 mt-sm-3 offset-lg-1 mb-3">
         <span class="content-admin__request__span col-12 text-center d-block"><i class="fas fa-paperclip"></i> Заявка от Simon</span>
         <table class="table">
           <tbody>
@@ -54,7 +88,7 @@
           </tr>
           </tbody>
         </table>
-      </div>
+      </div>--}}
     </div>
   </main>
 @endsection

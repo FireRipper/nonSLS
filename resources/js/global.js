@@ -36,6 +36,27 @@ $(document).ready(() => {
 		}
 	})
 
+	$('.content-admin__user__table__th').click((evt) => {
+		selectAll(evt.currentTarget)
+		execCopy()
+	})
 
+	/**
+	 * @param {String, Node} node
+	 */
+	function selectAll(node) {
+		if (!(node instanceof Node)) {
+			node = document.querySelector(node)
+		}
+
+		window.getSelection().selectAllChildren(node)
+	}
+
+	/**
+	 * @return {boolean}
+	 */
+	function execCopy() {
+		return document.execCommand('copy')
+	}
 })
 

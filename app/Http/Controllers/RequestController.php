@@ -9,7 +9,16 @@ class RequestController extends Controller
     //
     public function index()
     {
-        return view('admin/adminrequest');
+        $requests = Request::select([
+            'requests.*',
+            'users.name as userFirstName',
+            'users.last_name as userLastName',
+            'users.email as userEmail'
+        ])
+            ->leftJoin('users', 'users.id', '=', 'requests.user_id')
+            ->paginate(20);
+
+        return view('admin/adminrequest', ['requests' => $requests]);
     }
 
     public function store(StatementRequest $request)

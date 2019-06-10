@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Request;
 
 class HomeController extends Controller
 {
@@ -23,7 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $titles = 'ЛНР - личный кабинет';
-        return view('home')->with('titles', $titles);
+        $requests = Request::where('user_id', auth()->id())->paginate(5);
+
+        return view('home')->with([
+            'titles' => 'ЛНР - личный кабинет',
+            'requests' => $requests
+        ]);
     }
 }

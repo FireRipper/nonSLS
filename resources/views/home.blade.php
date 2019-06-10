@@ -104,86 +104,31 @@
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
               <div class="row justify-content-center mb-2">
                 <h2 class="content-home-user__request__h2 col-12 text-center mt-3 mb-3">Ваши заявки </h2>
-                <div class="content-home-user__request__content col-lg-10 mt-sm-3">
-                  <span class="content-home-user__request__span col-12 text-center d-block"><i class="fas fa-paperclip"></i> Заявка №1</span>
-                  <table class="table">
-                    <tbody>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Имя</th>
-                      <td class="content-home-user__request__table__td">Simon</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Фамилия</th>
-                      <td class="content-home-user__request__table__td">Villiam</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Отчество</th>
-                      <td class="content-home-user__request__table__td">Oliver</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Услуга</th>
-                      <td class="content-home-user__request__table__td">Установка системы видеонаблюдения</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Техническое задание</th>
-                      <td class="content-home-user__request__table__td">Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur
-                        mollit aute
-                        magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis
-                        laboris ipsum
-                        velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip
-                        labore
-                        Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do
-                        sint
-                        minim consectetur qui.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Дата подачи</th>
-                      <td class="content-home-user__request__table__td">30.05.2019</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="content-home-user__request__content col-lg-10 mt-sm-3">
-                  <span class="content-home-user__request__span col-12 text-center d-block"><i class="fas fa-paperclip"></i> Заявка №2</span>
-                  <table class="table">
-                    <tbody>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Имя</th>
-                      <td class="content-home-user__request__table__td">Simon</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Фамилия</th>
-                      <td class="content-home-user__request__table__td">Villiam</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Отчество</th>
-                      <td class="content-home-user__request__table__td">Oliver</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Услуга</th>
-                      <td class="content-home-user__request__table__td">Установка системы видеонаблюдения</td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Техническое задание</th>
-                      <td class="content-home-user__request__table__td">Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur
-                        mollit aute
-                        magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis
-                        laboris ipsum
-                        velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip
-                        labore
-                        Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do
-                        sint
-                        minim consectetur qui.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" class="content-home-user__request__table__th">Дата подачи</th>
-                      <td class="content-home-user__request__table__td">30.05.2019</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
+                @foreach($requests as $request)
+                  <div class="content-home-user__request__content col-lg-10 mt-sm-3">
+                    <span class="content-home-user__request__span col-12 text-center d-block">
+                      <i class="fas fa-paperclip"></i> Заявка №{{ $request->id }}
+                    </span>
+                    <table class="table">
+                      <tbody>
+                      <tr>
+                        <th scope="row" class="content-home-user__request__table__th">Услуга</th>
+                        <td class="content-home-user__request__table__td">{{ $request->service }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="content-home-user__request__table__th">Техническое задание</th>
+                        <td class="content-home-user__request__table__td">
+                          {{ $request->task }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="content-home-user__request__table__th">Дата подачи</th>
+                        <td class="content-home-user__request__table__td">{{ $request->created_at }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                @endforeach
               </div>
             </div>
             <div class="tab-pane fade" id="v-pills-technical-task" role="tabpanel"

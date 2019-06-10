@@ -52,7 +52,8 @@
   }
 
   .page-link {
-    border-radius: 50% !important;
+    border-radius: .25rem !important;
+    min-width: 31px !important;
     border: 0;
     color: #2955c8;
 

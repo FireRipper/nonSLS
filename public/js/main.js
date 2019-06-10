@@ -10767,6 +10767,29 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       sideBarSpan.show();
     }
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin__user__table__th').click(function (evt) {
+    selectAll(evt.currentTarget);
+    execCopy();
+  });
+  /**
+   * @param {String, Node} node
+   */
+
+  function selectAll(node) {
+    if (!(node instanceof Node)) {
+      node = document.querySelector(node);
+    }
+
+    window.getSelection().selectAllChildren(node);
+  }
+  /**
+   * @return {boolean}
+   */
+
+
+  function execCopy() {
+    return document.execCommand('copy');
+  }
 });
 
 /***/ }),

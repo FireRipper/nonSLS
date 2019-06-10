@@ -4,6 +4,9 @@
   font-weight: 600;
 }
 
+$sidebarFull: 250px;
+$sidebarMini: 80px;
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -13,9 +16,14 @@
   align-items: stretch;
 }
 
+// TODO Move
+#content {
+  width: calc(100% - #{$sidebarFull});
+}
+
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: $sidebarFull;
+  max-width: $sidebarFull;
   background: #4f5a6e;
   color: $lighter;
   transition: all 0.3s;
@@ -76,9 +84,14 @@
   position: relative;
 }
 
+// TODO Move
+#sidebar.active + #content {
+  width: calc(100% - #{$sidebarMini});
+}
+
 #sidebar.active {
-  min-width: 80px;
-  max-width: 80px;
+  min-width: $sidebarMini;
+  max-width: $sidebarMini;
   text-align: center;
 
   .sidebar-header {
@@ -155,7 +168,6 @@
 ----------------------------------------------------- */
 
 #content {
-  width: 100%;
   min-height: 100vh;
   transition: all 0.3s;
 }
@@ -166,10 +178,14 @@
 
 @media only screen and (max-width: 768px) {
   #sidebar {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: $sidebarMini;
+    max-width: $sidebarMini;
     text-align: center;
-    margin-left: -80px !important;
+    margin-left: -$sidebarMini !important;
+  }
+  //TODO Move
+  #content {
+    width: 100%;
   }
   .sidebar-list-ul-li-a__span{
     display: none !important;
