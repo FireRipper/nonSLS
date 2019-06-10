@@ -215,7 +215,7 @@ body {
   background: #039be5;
 }
 .content-admin__mini__block .bg-mini-blocks__green {
-  background: #b2ff59;
+  background: #26a69a;
 }
 .content-admin__mini__block .bg-mini-blocks__indigo {
   background: #3f51b5;
@@ -250,29 +250,45 @@ body {
   color: #bdbdbd;
 }
 .content-admin__mini__block .content-admin__mini__block__shadow {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(149, 117, 205, 0.16), 0 3px 6px rgba(149, 117, 205, 0.23);
 }
 
-/*#content-admin-block-about-for-page{
-  .content-admin__mini__block {
-    border-radius: 50px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    .content-admin__mini__block__span{
-      border-radius: 50%;
-      background: #00cade;
-    }
-    .content-admin__mini__block__p{
-      font-size: calcFluidFontSize(16, 18, 480, 1280);
-      color: $darker;
-      font-weight: 600;
-      margin-bottom: 0;
-    }
-    .content-admin__mini__block__icon{
-      font-size: calcFluidFontSize(12, 14, 480, 1280);
-      color: $lighter;
-    }
-  }
-}*/
+.content-admin-card {
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+}
+.content-admin-card .bg-card-header__blue {
+  background-color: #039be5;
+}
+.content-admin-card .bg-card-header__green {
+  background-color: #26a69a;
+}
+.content-admin-card .bg-card-header__indigo {
+  background-color: #3f51b5;
+}
+.content-admin-card .bg-card-header__red {
+  background-color: #f44336;
+}
+.content-admin-card .content-admin-card__header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 1px 3px rgba(149, 117, 205, 0.12), 0 1px 2px rgba(149, 117, 205, 0.24);
+  border: 0;
+}
+.content-admin-card .content-admin-card__header .content-admin-card__header__h2 {
+  color: #f8f9fa;
+  font-size: calc(0.0025 * 100vw + 16.8px);
+}
+.content-admin-card .content-admin-card__body .content-admin-card__body__text {
+  color: #33475b;
+  font-size: calc(0.0025 * 100vw + 14.8px);
+}
+.content-admin-card .content-admin-card__body .content-admin-card__body__list {
+  color: #33475b;
+  font-size: calc(0.0025 * 100vw + 12.8px);
+}
+
 /* ---------------------------------------------------
  MEDIAQUERIES
  ----------------------------------------------------- */
