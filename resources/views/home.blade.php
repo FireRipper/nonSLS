@@ -129,6 +129,13 @@
                     </table>
                   </div>
                 @endforeach
+                @if(!count($requests))
+                  <div class="col-12 content-home-user__not__have__request">
+                    <a class="content-home-user__not__have__request__a text-center" href="{{route('request')}}" title="Нажмите что бы подать заяву">
+                      У вас нету отправленных заявок!
+                    </a>
+                  </div>
+                  @endif
               </div>
             </div>
             <div class="tab-pane fade" id="v-pills-technical-task" role="tabpanel"

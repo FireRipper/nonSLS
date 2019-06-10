@@ -9,7 +9,7 @@ class Request extends Model
 {
     //
     protected $fillable = [
-        'name', 'service', 'task'
+        'service', 'task'
     ];
 
     public function user()

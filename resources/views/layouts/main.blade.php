@@ -42,22 +42,25 @@
               class="fas fa-scroll"></i> Подача заявы</a>
       </nav>
       <div class="header-menu__btn d-flex justify-content-end">
+        @php
+          $authUser = auth()
+        @endphp
         @if (Route::has('login'))
           @auth
             <div class="dropdown">
               <a id="navbarDropdown" class="header-menu__btn__user__name nav-link dropdown-toggle rounded" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
+                <i class="fas fa-user-circle"></i> {{ $authUser->user()->name }}
               </a>
               <div class="dropdown-menu dropdown-menu-right header-dropdown-menu__style" aria-labelledby="navbarDropdown">
-                <a href="{{ url('/home') }}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-portrait"></i> Личный кабинет</a>
-                @if (Auth::user()->isAdmin)
-                  <a href="{{route('admin')}}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-lock"></i> Админ панель</a>
+                <a href="{{ url('/home') }}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-portrait header-dropdown-menu__link__icon"></i> Личный кабинет</a>
+                @if ($authUser->user()->isAdmin)
+                  <a href="{{route('admin')}}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-lock header-dropdown-menu__link__icon"></i> Админ панель</a>
                 @endif
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item header-menu__dropdown__logout" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                  Выйти <i class="fas fa-sign-out-alt"></i>
+                  Выйти <i class="fas fa-sign-out-alt header-dropdown-menu__link__icon"></i>
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

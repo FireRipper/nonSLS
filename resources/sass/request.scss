@@ -4,7 +4,8 @@
 
   .request-content-header-h1 {
     color: $darker;
-    font-size: calcFluidFontSize(17, 28, 480, 1280);
+    font-size: calcFluidFontSize(20, 28, 480, 1280);
+    text-align: center;
   }
 
   .request-content__text {
@@ -55,17 +56,43 @@
       border: 1px solid #eaf0f6;
     }
 
-    .form-request__style__textarea{
-      resize: none;
-      height: 150px;
+    .request-content__form__request__label{
+      color: $darker;
+      font-size: calcFluidFontSize(14, 17 , 480, 1280);
     }
 
-    .form-request__style__input{
-      border-color: $bluer;
-      background: #00cade12;
+    .request-content__form__request__textarea{
+      resize: none;
+      height: 150px;
+      font-size: calcFluidFontSize(14, 16 , 480, 1280);
+      border: 0;
+      box-shadow: 0 1px 3px rgba(149,117,205,0.12), 0 1px 2px rgba(149,117,205,0.24);
+      transition: .4s;
+      &:focus{
+        box-shadow: 0 3px 6px rgba(149,117,205,0.16), 0 3px 6px rgba(149,117,205,0.23);
+      }
     }
-    .form-request__text__label__bluer{
-      color: $darker;
+
+    .request-content-form-submit__btn{
+      background: #7e57c2;
+      color: $light;
+      width: 100%;
+      box-shadow: 0 1px 3px rgba(149,117,205,0.12), 0 1px 2px rgba(149,117,205,0.24);
+      transition: .7s;
+      &:hover {
+        box-shadow: 0 3px 6px rgba(149,117,205,0.16), 0 3px 6px rgba(149,117,205,0.23);
+      }
+    }
+    .request-content__form__request__select{
+      border: 0;
+      box-shadow: 0 1px 3px rgba(149,117,205,0.12), 0 1px 2px rgba(149,117,205,0.24);
+      transition: .4s;
+      .request-content__form__request__select__option{
+        font-size: calcFluidFontSize(12, 14 , 480, 1280);
+      }
+      &:focus{
+        box-shadow: 0 3px 6px rgba(149,117,205,0.16), 0 3px 6px rgba(149,117,205,0.23);
+      }
     }
   }
 }
@@ -75,4 +102,17 @@
   margin: 0 1.3rem 0;
   width: 100%;
   background:url('/images/request_content/request_man.svg') no-repeat;
+}
+
+@media only screen and (max-width: 992px){
+  .request-content__image__man__write__request {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px){
+  .request-content__image__man__write__request {
+    display: flex;
+    height: 75px;
+  }
 }

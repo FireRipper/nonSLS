@@ -36,7 +36,7 @@ $(document).ready(() => {
 		}
 	})
 
-	$('.content-admin__user__table__th').click((evt) => {
+	$('.copy-email_user').click((evt) => {
 		selectAll(evt.currentTarget)
 		execCopy()
 	})

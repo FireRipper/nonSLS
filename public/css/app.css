@@ -177,6 +177,12 @@ header {
 .header-dropdown-menu__style {
   border: 1px solid #339999;
 }
+.header-dropdown-menu__style .header-dropdown-menu__link__icon {
+  padding-right: 10px;
+}
+.header-dropdown-menu__style .header-dropdown-menu__link__icon:nth-last-child(1) {
+  padding-left: 10px;
+}
 
 .header-menu__dropdown__logout, .header-menu__dropdown__private__cab {
   font-size: calc(0.000625 * 100vw + 13.7px);
@@ -1082,7 +1088,8 @@ header {
 }
 #request-content .request-content-header-h1 {
   color: #33475b;
-  font-size: calc(0.01375 * 100vw + 10.4px);
+  font-size: calc(0.01 * 100vw + 15.2px);
+  text-align: center;
 }
 #request-content .request-content__text {
   background: #dc354524;
@@ -1127,16 +1134,41 @@ header {
 #request-content #request-content__form__request .request-content__form {
   border: 1px solid #eaf0f6;
 }
-#request-content #request-content__form__request .form-request__style__textarea {
+#request-content #request-content__form__request .request-content__form__request__label {
+  color: #33475b;
+  font-size: calc(0.00375 * 100vw + 12.2px);
+}
+#request-content #request-content__form__request .request-content__form__request__textarea {
   resize: none;
   height: 150px;
+  font-size: calc(0.0025 * 100vw + 12.8px);
+  border: 0;
+  box-shadow: 0 1px 3px rgba(149, 117, 205, 0.12), 0 1px 2px rgba(149, 117, 205, 0.24);
+  transition: 0.4s;
 }
-#request-content #request-content__form__request .form-request__style__input {
-  border-color: #339999;
-  background: #00cade12;
+#request-content #request-content__form__request .request-content__form__request__textarea:focus {
+  box-shadow: 0 3px 6px rgba(149, 117, 205, 0.16), 0 3px 6px rgba(149, 117, 205, 0.23);
 }
-#request-content #request-content__form__request .form-request__text__label__bluer {
-  color: #33475b;
+#request-content #request-content__form__request .request-content-form-submit__btn {
+  background: #7e57c2;
+  color: #f8f9fa;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(149, 117, 205, 0.12), 0 1px 2px rgba(149, 117, 205, 0.24);
+  transition: 0.7s;
+}
+#request-content #request-content__form__request .request-content-form-submit__btn:hover {
+  box-shadow: 0 3px 6px rgba(149, 117, 205, 0.16), 0 3px 6px rgba(149, 117, 205, 0.23);
+}
+#request-content #request-content__form__request .request-content__form__request__select {
+  border: 0;
+  box-shadow: 0 1px 3px rgba(149, 117, 205, 0.12), 0 1px 2px rgba(149, 117, 205, 0.24);
+  transition: 0.4s;
+}
+#request-content #request-content__form__request .request-content__form__request__select .request-content__form__request__select__option {
+  font-size: calc(0.0025 * 100vw + 10.8px);
+}
+#request-content #request-content__form__request .request-content__form__request__select:focus {
+  box-shadow: 0 3px 6px rgba(149, 117, 205, 0.16), 0 3px 6px rgba(149, 117, 205, 0.23);
 }
 
 .request-content__image__man__write__request {
@@ -1146,6 +1178,17 @@ header {
   background: url("/images/request_content/request_man.svg") no-repeat;
 }
 
+@media only screen and (max-width: 992px) {
+  .request-content__image__man__write__request {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .request-content__image__man__write__request {
+    display: flex;
+    height: 75px;
+  }
+}
 .form-registration, .form-authorization {
   padding: 30px;
   border: 1px solid #eaf0f6;
@@ -1348,6 +1391,25 @@ header {
 #content-home-user .content-home-user__request__content .content-home-user__request__table__th, #content-home-user .content-home-user__request__content .content-home-user__request__table__td {
   font-size: calc(0.00375 * 100vw + 12.2px);
   color: #33475b;
+}
+#content-home-user .content-home-user__not__have__request {
+  height: 300px;
+}
+#content-home-user .content-home-user__not__have__request .content-home-user__not__have__request__a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  border: 4px dashed #4f5a6e;
+  color: #4f5a6e;
+  font-size: calc(0.0075 * 100vw + 16.4px);
+  transition: 0.5s;
+}
+#content-home-user .content-home-user__not__have__request .content-home-user__not__have__request__a:hover {
+  text-decoration: none;
+  opacity: 1;
 }
 #content-home-user .content-home-user__technical__task__h2 {
   font-size: calc(0.0075 * 100vw + 16.4px);

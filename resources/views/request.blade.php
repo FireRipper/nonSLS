@@ -16,108 +16,63 @@
           @endauth
         @endif
         <div
-            class="col-sm-3 request-content__block__for__image__man__write__request mt-sm-5 mb-sm-5 d-flex align-items-center">
+            class="col-sm-3 request-content__block__for__image__man__write__request mt-lg-5 mb-lg-5 d-flex align-items-center">
           <div class="request-content__image__man__write__request"></div>
         </div>
-        <div class="col-sm-9 mt-sm-5 mt-3">
+        <div class="col-lg-9 mt-lg-5 mt-2">
           <h3 class="request-content__h3"> Для того что бы подать заявление, нужно заполнить форму ниже! </h3>
           <p class="request-content__what__do__p">Что вам нужно сделать:</p>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item request-content__what__do__li">➀ Заполните поля имя, фамилия,
-              отчество - данные поля отображают данные о Вас получателю заявления.
+            <li class="list-group-item request-content__what__do__li">1. Зарегистрироваться или
+              авторизоваться на сайте(если Вы уже зарегистрированы).
             </li>
-            <li class="list-group-item request-content__what__do__li">➁ Выберите услугу из списка - данное
+            <li class="list-group-item request-content__what__do__li">2. Выберите услугу из списка - данное
               поля отображает услугу которую вы выбрали получателю заявления.
             </li>
-            <li class="list-group-item request-content__what__do__li">➂ Заполните поле "Техническое
+            <li class="list-group-item request-content__what__do__li">3. Заполните поле "Техническое
               задание" - расскажите вообщем что бы Вы хотели сделать на объекте,
               укажите место нахождение (где необходимо проводить работы по уставовке оборудования),
               укажите желаемый срок в днях.
+            </li>
+            <li class="list-group-item request-content__what__do__li">4. Нажмите кнопку "Отправить".
             </li>
           </ul>
         </div>
         <h3 class="col-12 text-center request-content__h3__request mt-2 mb-3"><i class="fas fa-paperclip"></i>
           Заява</h3>
-        <div class="col-md-8 rounded shadow-lg mb-sm-5 request-content__form">
+        <div class="col-lg-8 mb-sm-5 request-content__form">
           <form id="request-content__form__request" method="post" action="{{url('request')}}">
             @csrf
-            <div class="form-row mt-4">
-              <div class="form-group col-lg-4">
-                <label class="form-request__text__label__bluer" for="exampleInputName">Введите
-                  имя</label>
-                <input id="form-request__name" type="text" name="name"
-                       class="form-request__style__input form-control form-control__color__shadow__bluer"
-                       placeholder="Имя"
-                       @if (Route::has('login'))
-                       @auth
-                       value="{{auth()->user()->name}}"
-                       @else
-                       @endauth
-                       @endif readonly>
-                <div class="invalid-feedback">
-                  Введите имя, используя русские или латинские буквы!
-                </div>
-              </div>
-              <div class="form-group col-lg-4">
-                <label class="form-request__text__label__bluer" for="exampleInputSurname">Введите
-                  фамилию</label>
-                <input type="text" name="middle_name"
-                       class="form-request__style__input form-control form-control__color__shadow__bluer"
-                       placeholder="Фамилия"
-                       @if (Route::has('login'))
-                         @auth
-                            value="{{auth()->user()->middle_name}}"
-                           @else
-                         @endauth
-                       @endif
-                       readonly>
-                <div class="invalid-feedback">
-                  Введите фамилию, используя русские или латинские буквы!
-                </div>
-              </div>
-              <div class="form-group col-lg-4">
-                <label class="form-request__text__label__bluer" for="exampleInputPatronymic">Введите
-                  отчество</label>
-                <input type="text" name="last_name"
-                       class="form-request__style__input form-control form-control__color__shadow__bluer"
-                       placeholder="Отчество"
-                       @if (Route::has('login'))
-                         @auth
-                            value="{{auth()->user()->last_name}}"
-                           @else
-                         @endauth
-                       @endif
-                       readonly>
-                <div class="invalid-feedback">
-                  Введите отчество, используя русские или латинские буквы!
-                </div>
-              </div>
-            </div>
             <div class="form-group">
-              <label for="inputServices" class="form-request__text__label__bluer">Выберите услугу из
+              <label for="select-service" class="request-content__form__request__label">Выберите услугу из
                 списка</label>
-              <select id="inputServices" name="service" class="form-request form-control form-request__style__input">
-                <option selected>Выберите...</option>
-                <option>Установка Систем Видеонаблюдения</option>
-                <option>Охранная Система, Сигнализация</option>
-                <option>Установка Мини-АТС</option>
-                <option>Установка Систем Контроля Доступа</option>
-                <option>Установка Домофонных Систем</option>
+              <select id="select-service" name="service" class="form-request form-control request-content__form__request__select">
+                <option class="request-content__form__request__select__option" selected>Выберите...</option>
+                <option class="request-content__form__request__select__option">Установка Систем Видеонаблюдения</option>
+                <option class="request-content__form__request__select__option">Установка Охранной Сигнализации</option>
+                <option class="request-content__form__request__select__option">Установка Мини-АТС</option>
+                <option class="request-content__form__request__select__option">Установка Систем Контроля Доступа</option>
+                <option class="request-content__form__request__select__option">Установка Домофонных Систем</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1" class="form-request__text__label__bluer">Техническое
+              <label for="textarea-technical-task" class="request-content__form__request__label">Техническое
                 задание</label>
-              <textarea class="form-control form-request__style__input form-request__style__textarea"
-                        id="exampleFormControlTextarea1" name="task"
-                        rows="3"></textarea>
+              <textarea class="form-control request-content__form__request__textarea {{$errors->has('task') ? 'is-invalid' : ''}}"
+                        id="textarea-technical-task" name="task"
+                        rows="3" placeholder="Опишите что и где именно нужно установить..."></textarea>
+              @if ($errors->has('task'))
+              <span class="invalid-feedback text-right" role="alert">
+                                        <strong>{{ $errors->first('task')}}</strong>
+                                    </span>
+              @endif
             </div>
             <div class="form-group">
               <div class="col-lg-12 text-lg-right mt-3">
                 @if (Route::has('login'))
                   @auth
-                    <button id="form-registration-submit" type="submit"
-                            class=" form-registration__btn__submit btn px-lg-5">Отправить
+                    <button id="request-content-form-submit" type="submit"
+                            class="request-content-form-submit__btn btn px-lg-5">Отправить
                     </button>
                   @endauth
                 @endif

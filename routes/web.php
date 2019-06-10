@@ -26,13 +26,13 @@ Route::post('request', 'RequestController@store');
 Route::group(['prefix' => 'panel', 'middleware' => 'only.admin'], function () {
     Route::get('','AdminController@index')->name('admin');
 
-    Route::get('request','RequestController@index')->name('admin-request');
+    Route::get('requests','RequestController@index')->name('admin-request');
 
     Route::get('request/success', 'RequestSuccessController@index')->name('admin-request-success');
 
-    Route::get('technical-task', 'TechnicalTaskController@index')->name('admin-task');
+    Route::get('technical-tasks', 'TechnicalTaskController@index')->name('admin-task');
 
-    Route::get('user', 'UserController@index')->name('admin-user');
+    Route::get('users', 'UserController@index')->name('admin-user');
 
     /*Route::get('report', 'ReportController@index')->name('admin-report');*/
 });

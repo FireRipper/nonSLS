@@ -4,6 +4,25 @@
   font-weight: 600;
 }
 
+.content-admin-navbar__a{
+  text-align: center;
+  color: #fff !important;
+  border-radius: .25rem;
+  font-size: calcFluidFontSize(14, 16, 480, 1280);
+  box-shadow: 0 1px 3px rgba(0, 150, 136, 0.12), 0 1px 2px rgba(0, 150, 136, 0.24);
+  background: #009688;
+  transition: .4s;
+  &:hover{
+    box-shadow: 0 3px 6px rgba(0, 150, 136, 0.16), 0 3px 6px rgba(0, 150, 136, 0.23);
+  }
+}
+
+.content-admin__btn__toggle {
+  color: $lighter !important;
+  background: #1e88e5;
+  border: 1px solid #1e88e5;
+}
+
 $sidebarFull: 250px;
 $sidebarMini: 80px;
 
@@ -172,9 +191,93 @@ $sidebarMini: 80px;
   transition: all 0.3s;
 }
 
+.content-admin__mini__block{
+  .roundy {
+    border-radius: 50px;
+  }
+  .bg-mini-blocks{
+      background: #039be5;
+  }
+  .bg-mini-blocks__green{
+    background: #b2ff59;
+  }
+  .bg-mini-blocks__indigo{
+    background: #3f51b5;
+  }
+  .bg-mini-blocks__red{
+    background: #f44336;
+  }
+  .dot{
+    max-width: 10px;
+    min-width: 10px;
+    max-height: 10px;
+    min-height: 10px;
+    border-radius: 50%
+  }
+
+  .icon {
+    font-size: calcFluidFontSize(10, 12, 480, 1280);
+    min-width: 2.2rem;
+    max-width: 2.2rem;
+    min-height: 2.2rem;
+    max-height: 2.2rem;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .text{
+    .text__h6{
+      color: $darker;
+      font-weight: 600;
+      font-size: calcFluidFontSize(14, 16, 480, 1280);
+    }
+    .text-gray{
+      color: #bdbdbd;
+    }
+  }
+  .content-admin__mini__block__shadow{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+}
+
+
+/*#content-admin-block-about-for-page{
+  .content-admin__mini__block {
+    border-radius: 50px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    .content-admin__mini__block__span{
+      border-radius: 50%;
+      background: #00cade;
+    }
+    .content-admin__mini__block__p{
+      font-size: calcFluidFontSize(16, 18, 480, 1280);
+      color: $darker;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    .content-admin__mini__block__icon{
+      font-size: calcFluidFontSize(12, 14, 480, 1280);
+      color: $lighter;
+    }
+  }
+}*/
+
 /* ---------------------------------------------------
  MEDIAQUERIES
  ----------------------------------------------------- */
+@media only screen and (max-width: 992px) {
+  .content-admin-navbar__a{
+    margin-top: 5px;
+  }
+}
+
 
 @media only screen and (max-width: 768px) {
   #sidebar {

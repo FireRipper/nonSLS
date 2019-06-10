@@ -45,7 +45,7 @@
                          alt="security">
                 </div>
                 <div id="security" class="service-content-info-card__style__all__block col-sm-8 rounded">
-                    <h3>Охранная Система, Сигнализация</h3>
+                    <h3>Установка Охранной Сигнализации</h3>
                     <article>
                         <p>Охранная система — автоматизированный комплекс для защиты различных объектов имущества
                             (зданий,

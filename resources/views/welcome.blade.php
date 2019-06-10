@@ -38,7 +38,7 @@
             <div class="content-services-block-box-service__details__content">
               <img src="{{asset('images/main_content/services/light_theme/security_alarm/security_light.png')}}"
                    alt="security" class="content-services-block-box-service__details__content__img">
-              <h3 class="content-services-block-box-service__details__content__h3">Охранная Система, Сигнализация</h3>
+              <h3 class="content-services-block-box-service__details__content__h3">Установка Охранной Сигнализации</h3>
               <a href="{{url('services#security')}}" class="content-services-block-box-service__details__content__a">Подробнее</a>
             </div>
           </div>
@@ -172,7 +172,7 @@
                 <label for="formGroupExampleInput">Ваше имя</label>
                 <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
                        id="formGroupExampleInput"
-                       placeholder="Имя пользователя" name="name" value="{{auth::user()->name}}" required readonly>
+                       placeholder="Имя пользователя" name="name" value="{{auth()->user()->name}}" required readonly>
                 @if ($errors->has('name'))
                   <span class="invalid-feedback text-right" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>

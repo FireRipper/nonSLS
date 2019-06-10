@@ -63,6 +63,25 @@ body {
   font-weight: 600;
 }
 
+.content-admin-navbar__a {
+  text-align: center;
+  color: #fff !important;
+  border-radius: 0.25rem;
+  font-size: calc(0.0025 * 100vw + 12.8px);
+  box-shadow: 0 1px 3px rgba(0, 150, 136, 0.12), 0 1px 2px rgba(0, 150, 136, 0.24);
+  background: #009688;
+  transition: 0.4s;
+}
+.content-admin-navbar__a:hover {
+  box-shadow: 0 3px 6px rgba(0, 150, 136, 0.16), 0 3px 6px rgba(0, 150, 136, 0.23);
+}
+
+.content-admin__btn__toggle {
+  color: #ecf0f1 !important;
+  background: #1e88e5;
+  border: 1px solid #1e88e5;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -189,9 +208,79 @@ body {
   transition: all 0.3s;
 }
 
+.content-admin__mini__block .roundy {
+  border-radius: 50px;
+}
+.content-admin__mini__block .bg-mini-blocks {
+  background: #039be5;
+}
+.content-admin__mini__block .bg-mini-blocks__green {
+  background: #b2ff59;
+}
+.content-admin__mini__block .bg-mini-blocks__indigo {
+  background: #3f51b5;
+}
+.content-admin__mini__block .bg-mini-blocks__red {
+  background: #f44336;
+}
+.content-admin__mini__block .dot {
+  max-width: 10px;
+  min-width: 10px;
+  max-height: 10px;
+  min-height: 10px;
+  border-radius: 50%;
+}
+.content-admin__mini__block .icon {
+  font-size: calc(0.0025 * 100vw + 8.8px);
+  min-width: 2.2rem;
+  max-width: 2.2rem;
+  min-height: 2.2rem;
+  max-height: 2.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-admin__mini__block .text .text__h6 {
+  color: #33475b;
+  font-weight: 600;
+  font-size: calc(0.0025 * 100vw + 12.8px);
+}
+.content-admin__mini__block .text .text-gray {
+  color: #bdbdbd;
+}
+.content-admin__mini__block .content-admin__mini__block__shadow {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/*#content-admin-block-about-for-page{
+  .content-admin__mini__block {
+    border-radius: 50px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    .content-admin__mini__block__span{
+      border-radius: 50%;
+      background: #00cade;
+    }
+    .content-admin__mini__block__p{
+      font-size: calcFluidFontSize(16, 18, 480, 1280);
+      color: $darker;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    .content-admin__mini__block__icon{
+      font-size: calcFluidFontSize(12, 14, 480, 1280);
+      color: $lighter;
+    }
+  }
+}*/
 /* ---------------------------------------------------
  MEDIAQUERIES
  ----------------------------------------------------- */
+@media only screen and (max-width: 992px) {
+  .content-admin-navbar__a {
+    margin-top: 5px;
+  }
+}
 @media only screen and (max-width: 768px) {
   #sidebar {
     min-width: 80px;
@@ -251,6 +340,51 @@ body {
     display: none;
   }
 }
+.content-admin__request__table__border__radius {
+  border-radius: 1.25rem;
+}
+.content-admin__request__table__border__radius .table-hover tbody tr:hover {
+  background: #8c9eff4a;
+}
+
+#content-admin__request__table .content-admin__request__thead {
+  background-color: #26a69a;
+  color: #f8f9fa;
+  /*box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);*/
+}
+#content-admin__request__table .content-admin__request__tbody {
+  background: #fff;
+}
+#content-admin__request__table .content-admin__request__table__thead__th {
+  font-size: calc(0.0025 * 100vw + 12.8px);
+}
+#content-admin__request__table .content-admin__request__table__th {
+  font-size: calc(0.00125 * 100vw + 13.4px);
+  color: #33475b;
+}
+#content-admin__request__table .content-admin__request__table__td {
+  font-size: calc(0.0025 * 100vw + 10.8px);
+  color: #33475b;
+}
+#content-admin__request__table .content-admin-request__btn {
+  color: #ecf0f1;
+  opacity: 0.9;
+  font-weight: 600;
+  font-size: calc(0.0025 * 100vw + 11.8px);
+  background-color: #2955c8;
+  border-color: #3f6ad8;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#content-admin__request__table .content-admin-request__btn:hover {
+  opacity: 1;
+  box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+}
+#content-admin__request__table .content-admin-request__btn:focus {
+  box-shadow: none;
+}
+
 .content-admin__request__content {
   box-shadow: 0 3px 6px rgba(51, 153, 153, 0.16), 0 3px 6px rgba(51, 153, 153, 0.23);
   background-color: #fff;

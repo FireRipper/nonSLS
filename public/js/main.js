@@ -10767,7 +10767,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       sideBarSpan.show();
     }
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin__user__table__th').click(function (evt) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.copy-email_user').click(function (evt) {
     selectAll(evt.currentTarget);
     execCopy();
   });
