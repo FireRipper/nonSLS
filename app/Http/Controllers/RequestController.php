@@ -32,8 +32,16 @@ class RequestController extends Controller
         return redirect()->route('request');
     }
 
-    public function show()
+    public function show(Request $request, int $id)
     {
         // get request + all reports
+        $model = Request::findOfFail($id);
+
+        if (! $model->is_read) {
+            $model->is_read = true;
+            $model->save();
+        }
+
+//        return view()
     }
 }

@@ -33,7 +33,7 @@
                 <th scope="row" class="content-admin__request__table__th">{{ $request->service }}</th>
                 <th scope="row" class="content-admin__request__table__th">{{ $request->task }}</th>
                 <th scope="row" class="content-admin__request__table__th">{{ $request->created_at }}</th>
-                <th scope="row"><a href="{{ route('request') }}" role="button" class="btn content-admin-request__btn">Перейти</a></th>
+                <th scope="row"><a href="{{ route('admin-report', $request->id) }}" role="button" class="btn content-admin-request__btn">Перейти</a></th>
               </tr>
             @endforeach
             </tbody>
