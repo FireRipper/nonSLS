@@ -1,5 +1,4 @@
 .content-admin__request__table__border__radius {
-  border-radius: 1.25rem;
   .table-hover {
     tbody{
       tr{
@@ -11,9 +10,35 @@
   }
 }
 
+.content-admin__request__pagination {
+  .page-item {
+    padding: 0 5px;
+  }
+
+  .page-item.active {
+    .page-link {
+      color: $light !important;
+      background: #25ba84 !important;
+      border-color: #25ba84;
+      box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+    }
+  }
+
+  .page-link {
+    border-radius: .25rem !important;
+    min-width: 31px !important;
+    border: 0;
+    color: #25ba84;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+    }
+  }
+}
+
 #content-admin__request__table {
   .content-admin__request__thead {
-    background-color: #26a69a;
+    background-color: #25ba84;
     color: $light;
     /*box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);*/
   }
@@ -23,10 +48,18 @@
   }
 
   .content-admin__request__table__thead__th {
+    &:first-child{
+      background-color: #5a5a5a;
+    }
     font-size: calcFluidFontSize(14, 16, 480, 1280);
   }
 
   .content-admin__request__table__th {
+    &:first-child{
+      background-color: #25ba84;
+      color: $light;
+    }
+
     font-size: calcFluidFontSize(14, 15, 480, 1280);
     color: $darker;
   }

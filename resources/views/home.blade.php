@@ -32,7 +32,7 @@
                aria-controls="v-pills-technical-task" aria-selected="false">Техническое задание</a>
             <a class="nav-link content-home__column__menu__link" id="v-pills-messages-tab" data-toggle="pill"
                href="#v-pills-messages" role="tab"
-               aria-controls="v-pills-messages" aria-selected="false">Отчёт(ы)</a>
+               aria-controls="v-pills-messages" aria-selected="false">Отчёт</a>
           </div>
           {{--  <a class="" href="{{ route('logout') }}"
                onclick="event.preventDefault();

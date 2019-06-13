@@ -37,7 +37,7 @@
         </a>
       </li>
       <li class="sidebar-list-ul__li
-             @if($currentRoute === 'admin-request' || $currentRoute === 'admin-request-success')
+             @if($currentRoute === 'admin-request' || $currentRoute === 'admin-read-request' || $currentRoute === 'admin-report')
             active
             @endif">
         <a href="#pageSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-list-ul-li__a">
@@ -51,7 +51,7 @@
             <a href="{{route('admin-request')}}" class="sidebar-list-ul-li__a sidebar-list-ul-li__submenu__a">Входящие</a>
           </li>
           <li class="sidebar-list__submenu__li">
-            <a href="{{route('admin-request-success')}}" class="sidebar-list-ul-li__a sidebar-list-ul-li__submenu__a">Прочитаные</a>
+            <a href="{{route('admin-read-request')}}" class="sidebar-list-ul-li__a sidebar-list-ul-li__submenu__a">Прочитаные</a>
           </li>
         </ul>
       </li>
@@ -77,17 +77,6 @@
           </span>
         </a>
       </li>
-      {{--<li class="sidebar-list-ul__li
-          @if($currentRoute === 'admin-report')
-          active
-          @endif">
-        <a href="{{route('admin-report')}}" class="sidebar-list-ul-li__a">
-          <i class="fas fa-clipboard-list sidebar-admin__i"></i>
-          <span class="sidebar-list-ul-li-a__span">
-            Отчеты
-          </span>
-        </a>
-      </li>--}}
     </ul>
   </nav>
 
@@ -116,6 +105,7 @@
     @yield('admin_technical_task')
     @yield('admin_users')
     @yield('admin_report')
+    @yield('admin_read_request')
   </div>
 </div>
 <script type="application/javascript" src="{{asset('js/app.js')}}"></script>

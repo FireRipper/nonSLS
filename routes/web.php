@@ -32,7 +32,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'only.admin'], function () {
 
     Route::group(['prefix' => 'requests'], function () {
         Route::get('/','RequestController@index')->name('admin-request');
-        Route::get('success', 'RequestSuccessController@index')->name('admin-request-success');
+        Route::get('read-requests', 'ReadRequestController@index')->name('admin-read-request');
         Route::get('{request}/reports', 'ReportController@index')->name('admin-report');
     });
 });

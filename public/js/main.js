@@ -10790,6 +10790,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   function execCopy() {
     return document.execCommand('copy');
   }
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin-report__btn__add__input').on('click', function () {
+    var report = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.block-report');
+    report.clone().removeClass('block-report').addClass('block-report' + '_1').appendTo('.add');
+  });
 });
 
 /***/ }),

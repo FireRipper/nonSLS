@@ -58,5 +58,12 @@ $(document).ready(() => {
 	function execCopy() {
 		return document.execCommand('copy')
 	}
+
+	$('.content-admin-report__btn__add__input').on('click', () => {
+		const report = $('.block-report')
+
+		report.clone().removeClass('block-report').addClass('block-report' + '_1').appendTo('.add')
+
+	})
 })
 
