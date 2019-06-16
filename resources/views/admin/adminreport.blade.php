@@ -43,7 +43,7 @@
         <form id="content-admin-report" action="javascript:void(0)" method="post">
           @csrf
           <div class="add">
-            <div class= "block-report form-row mb-sm-3 align-items-center" id="report_1">
+            <div class= "block-report form-row mb-sm-3 align-items-center del-me" id="report">
               <div class="block-material col-lg-8">
                 <label for="content-admin-report__style__textarea" class="content-admin-report__label">Материалы</label>
                 <textarea class="form-control content-admin-report__style__textarea" id="content-admin-report__style__textarea" rows="2" placeholder="Материалы используемые при работе..."></textarea>
@@ -58,8 +58,8 @@
               </span>
                 @endif
               </div>
-              <div class="block-price col-lg-4 offset-lg-8">
-                <label for="content-admin-report__price" class="content-admin-report__label">Цена (метариал, вып.работа)</label>
+              <div class="block-price col-lg-8">
+                <label for="content-admin-report__price" class="content-admin-report__label">Цена (метариал, вып.работа) грн.</label>
                 <input type="text" class="form-control content-admin-report__style__input {{ $errors->has('text') ? ' is-invalid' : '' }}" id="content-admin-report__price"
                        placeholder="Введите цену за материал, проделанную работу...">
                 @if ($errors->has('text'))
@@ -68,6 +68,10 @@
               </span>
                 @endif
               </div>
+              <div class="col-lg-4 btn-delete">
+                <span class="content-admin-report__label d-block mb-2">Удалить поля</span>
+                <div class="content-admin-report__btn__del__input"><i class="fas fa-minus-circle"></i> Удалить поля</div>
+              </div>
             </div>
           </div>
           <div class="form-row">
@@ -75,12 +79,8 @@
               <label for="content-admin-report__btn__add" class="content-admin-report__label">Добавить ещё поля</label>
               <div id="content-admin-report__btn__add" class="content-admin-report__btn__add__input"><i class="fas fa-plus-circle"></i> Добавить поля</div>
             </div>
-            <div class="col-lg-4">
-              <label for="content-admin-report__btn__del" class="content-admin-report__label">Удалить поля</label>
-              <div id="content-admin-report__btn__del" class="content-admin-report__btn__del__input"><i class="fas fa-minus-circle"></i> Удалить поля</div>
-            </div>
             <div class="col-lg-12 mt-3">
-              <button  type="submit" class="btn content-admin-report__submit">Оправить отчёт пользователю</button>
+              <button  type="submit" class="btn content-admin-report__submit">Оправить отчёт пользователю <i class="fas fa-directions"></i></button>
             </div>
           </div>
         </form>

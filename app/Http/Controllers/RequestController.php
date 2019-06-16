@@ -13,8 +13,10 @@ class RequestController extends Controller
             'requests.*',
             'users.name as userFirstName',
             'users.last_name as userLastName',
-            'users.email as userEmail'
+            'users.email as userEmail',
+            'users.phone_number as userPhone'
         ])
+            ->orderBy('requests.created_at', 'desc')
             ->leftJoin('users', 'users.id', '=', 'requests.user_id')
             ->paginate(20);
 

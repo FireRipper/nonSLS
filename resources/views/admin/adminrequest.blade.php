@@ -17,6 +17,7 @@
             <tr>
               <th scope="col" class="content-admin__request__table__thead__th">#</th>
               <th scope="col" class="content-admin__request__table__thead__th">Пользователь</th>
+              <th scope="col" class="content-admin__request__table__thead__th">Номер телефона</th>
               <th scope="col" class="content-admin__request__table__thead__th">E-mail</th>
               <th scope="col" class="content-admin__request__table__thead__th">Услуга</th>
               <th scope="col" class="content-admin__request__table__thead__th">Техническое задание</th>
@@ -29,6 +30,7 @@
               <tr>
                 <th scope="row" class="content-admin__request__table__th">{{ $request->id }}</th>
                 <th scope="row" class="content-admin__request__table__th">{{ $request->userFirstName . ' ' . $request->userLastName}}</th>
+                <th scope="row" class="content-admin__request__table__th">{{ $request->userPhone}}</th>
                 <th scope="row" class="content-admin__request__table__th copy-email_user">{{ $request->userEmail }}</th>
                 <th scope="row" class="content-admin__request__table__th">{{ $request->service }}</th>
                 <th scope="row" class="content-admin__request__table__th">{{ $request->task }}</th>

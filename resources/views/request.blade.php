@@ -62,9 +62,9 @@
                         id="textarea-technical-task" name="task"
                         rows="3" placeholder="Опишите что и где именно нужно установить..."></textarea>
               @if ($errors->has('task'))
-              <span class="invalid-feedback text-right" role="alert">
-                                        <strong>{{ $errors->first('task')}}</strong>
-                                    </span>
+                <span class="invalid-feedback text-right" role="alert">
+                  <strong>{{ $errors->first('task', 'Поле техническое задание обязательно для заполнения')}}</strong>
+                </span>
               @endif
             </div>
             <div class="form-group">

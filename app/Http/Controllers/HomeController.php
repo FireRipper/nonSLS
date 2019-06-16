@@ -30,4 +30,8 @@ class HomeController extends Controller
             'requests' => $requests
         ]);
     }
+
+    public function edit($id){
+        
+    }
 }

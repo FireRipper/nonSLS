@@ -10739,6 +10739,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   var sideBar = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#sidebar');
   var contentSpan = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin__span');
   var sideBarSpan = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sidebar-list-ul-li-a__span');
+  var btnCancel = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-home-btn-cancel');
+  var formSpan = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-home__user__style__span');
+  var formInput = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-home__user__style__input');
+  var btnSave = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-home-btn-submit');
+  var btnEdit = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-home-btn-edit');
+  var cloneCount = 1;
+  var delCount = 1;
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() > 1000) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#btn-go__to__top').fadeIn();
@@ -10791,9 +10798,23 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     return document.execCommand('copy');
   }
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin-report__btn__add__input').on('click', function () {
-    var report = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.block-report');
-    report.clone().removeClass('block-report').addClass('block-report' + '_1').appendTo('.add');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-home__user__btn__edit').on('click', function () {
+    formSpan.removeClass('d-block').addClass('d-none');
+    formInput.removeClass('d-none').addClass('d-block');
+    btnSave.removeClass('d-none').addClass('d-block');
+    btnCancel.removeClass('d-none').addClass('d-block');
+    btnEdit.addClass('d-none').removeClass('d-block');
+  });
+  btnCancel.on('click', function () {
+    formSpan.removeClass('d-none').addClass('d-block');
+    formInput.addClass('d-none').removeClass('d-block');
+    btnSave.addClass('d-none').removeClass('d-block');
+    btnCancel.addClass('d-none').removeClass('d-block');
+    btnEdit.removeClass('d-none').addClass('d-block');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin-report__btn__add__input').click(function () {
+    var report = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#report');
+    report.clone().attr('id', 'report' + cloneCount++).removeClass('del-me').addClass('del-me_' + delCount++).insertAfter(jquery__WEBPACK_IMPORTED_MODULE_0___default()('[id^= report]:last'));
   });
 });
 

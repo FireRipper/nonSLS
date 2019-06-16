@@ -5,6 +5,13 @@ $(document).ready(() => {
 	const sideBar = $('#sidebar')
 	const contentSpan = $('.content-admin__span')
 	const sideBarSpan = $('.sidebar-list-ul-li-a__span')
+	const btnCancel = $('.form-home-btn-cancel')
+	const formSpan = $('.form-home__user__style__span')
+	const formInput = $('.form-home__user__style__input')
+	const btnSave = $('.form-home-btn-submit')
+	const btnEdit = $('.form-home-btn-edit')
+	let cloneCount = 1;
+	let delCount = 1;
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 1000) {
@@ -59,11 +66,60 @@ $(document).ready(() => {
 		return document.execCommand('copy')
 	}
 
-	$('.content-admin-report__btn__add__input').on('click', () => {
-		const report = $('.block-report')
+	$('.form-home__user__btn__edit').on('click', () => {
 
-		report.clone().removeClass('block-report').addClass('block-report' + '_1').appendTo('.add')
+		formSpan
+			.removeClass('d-block')
+			.addClass('d-none')
 
+		formInput
+			.removeClass('d-none')
+			.addClass('d-block')
+
+		btnSave
+			.removeClass('d-none')
+			.addClass('d-block')
+
+		btnCancel
+			.removeClass('d-none')
+			.addClass('d-block')
+
+		btnEdit
+			.addClass('d-none')
+			.removeClass('d-block')
 	})
+
+	btnCancel.on('click', () => {
+		formSpan
+			.removeClass('d-none')
+			.addClass('d-block')
+
+		formInput
+			.addClass('d-none')
+			.removeClass('d-block')
+
+		btnSave
+			.addClass('d-none')
+			.removeClass('d-block')
+
+		btnCancel
+			.addClass('d-none')
+			.removeClass('d-block')
+
+		btnEdit
+			.removeClass('d-none')
+			.addClass('d-block')
+	})
+	$('.content-admin-report__btn__add__input').click(() => {
+		const report = $('#report')
+
+		report
+			.clone()
+			.attr('id', 'report'+ cloneCount++)
+			.removeClass('del-me')
+			.addClass('del-me_' + delCount++)
+			.insertAfter($('[id^= report]:last'))
+	})
+
 })
 

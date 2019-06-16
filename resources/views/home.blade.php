@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
 @section('home_content')
+
+  @php
+  $authUser = auth()->user();
+  @endphp
   <div id="content">
     <div class="container mt-3 mb-3">
       <div class="row justify-content-center">
@@ -50,7 +54,7 @@
                  aria-labelledby="v-pills-home-tab">
               <div class="row">
                 <h2 class="content-home-user__h2 col-12 text-center mt-md-4 mt-2">Личный
-                  кабинет {{auth()->user()->name}}</h2>
+                  кабинет {{$authUser->name}}</h2>
                 <div class="col-12">
                   <form id="form-home" action="javascript:void(0)" method="POST">
                     <hr class="form-home__user__style__hr">
@@ -59,42 +63,86 @@
                       <div class="form-group col-lg-4">
                         <label class="form-home__user__style__label" for="form-home__user__first__name">Ваше
                           имя</label>
+                        <span class="d-block form-home__user__style__span">{{$authUser->name}}</span>
                         <input id="form-home__user__first__name" type="text" name="first_name"
-                               class="form-home__user__style__input form-control"
-                               placeholder="Имя" value="{{auth()->user()->name}}">
+                               class="form-home__user__style__input form-control {{ $errors->has('first_name') ? ' is-invalid' : '' }} d-none"
+                               placeholder="Николай" value="{{$authUser->name}}">
+                        @if ($errors->has('first_name'))
+                          <span class="invalid-feedback text-right" role="alert">
+                           <strong>{{ $errors->first('first_name') }}</strong>
+                          </span>
+                        @endif
                       </div>
                       <div class="form-group col-lg-4">
-                        <label class="form-home__user__style__label" for="form-home__user__middle__name">Ваша
-                          фамилия</label>
+                        <label class="form-home__user__style__label" for="form-home__user__middle__name">Ваша фамилия</label>
+                        <span class="d-block form-home__user__style__span">
+                          @if(empty($authUser->middle_name))
+                            Не указано
+                          @else
+                            {{$authUser->middle_name}}
+                          @endif
+                        </span>
                         <input id="form-home__user__middle__name" type="text" name="middle_name"
-                               class="form-home__user__style__input form-control"
-                               placeholder="Фамилия"
-                               value="{{auth()->user()->middle_name}}" {{--pattern="[а-яА-ЯёЁ, a-zA-Z]{2,64}" required--}}>
-                        <div class="invalid-feedback">
-                          Введите фамилию, используя русские или латинские буквы!
-                        </div>
+                               class="form-home__user__style__input form-control d-none"
+                               placeholder="Кузнецов"
+                               value="{{$authUser->middle_name}}">
                       </div>
                       <div class="form-group col-lg-4">
-                        <label class="form-home__user__style__label" for="form-home__user__lsat__name">Ваше
+                        <label class="form-home__user__style__label" for="form-home__user__last__name">Ваше
                           отчество</label>
-                        <input id="form-home__user__lsat__name" type="text" name="last_name"
-                               class="form-home__user__style__input form-control"
-                               placeholder="Отчество"
-                               value="{{auth()->user()->last_name}}" {{--pattern="[а-яА-ЯёЁ, a-zA-Z]{2,64}" required--}}>
-                        <div class="invalid-feedback">
-                          Введите отчество, используя русские или латинские буквы!
+                        <span class="d-block form-home__user__style__span">
+                          @if(empty($authUser->last_name))
+                            Не указано
+                          @else
+                            {{$authUser->last_name}}
+                          @endif
+                        </span>
+                        <input id="form-home__user__last__name" type="text" name="last_name"
+                               class="form-home__user__style__input form-control d-none"
+                               placeholder="Русланович"
+                               value="{{$authUser->last_name}}" >
+                      </div>
+                      <div class="form-group col-lg-4">
+                        <label class="form-home__user__style__label" for="form-home__user__phone__number">Ваш
+                          номер телефона</label>
+                        <span class="d-block form-home__user__style__span">
+                          @if(empty($authUser->phone_number))
+                            Не указан
+                          @else
+                            {{$authUser->phone_number}}
+                          @endif
+                          </span>
+                        <input id="form-home__user__phone__number" type="text" name="phone_number"
+                               class="form-home__user__style__input form-control d-none {{ $errors->has('phone_number') ? 'is-invalid' : '' }}"
+                               placeholder="+38(099)-212-13-22"
+                               value="{{$authUser->phone_number}}" >
+                          @if ($errors->has('phone_number'))
+                            <span class="invalid-feedback text-right" role="alert">
+                              <strong>{{ $errors->first('phone_number'), 'Укажите Ваш номер телефона' }}</strong>
+                            </span>
+                          @endif
+                      </div>
+                      <div class="form-group col-lg-8">
+                        <label class="form-home__user__style__label" for="form-home__user__email">E-mail</label>
+                        <span class="d-block form-home__user__style__span">{{$authUser->email}}</span>
+                        <input id="form-home__user__email" type="email"
+                               class="form-home__user__style__input form-control d-none"
+                               placeholder="krykov.zanna@example.net" name="email" value="{{$authUser->email}}">
+                      </div>
+                      <div class="form-group col-lg-6 form-home-btn-edit">
+                        <div class="form-home__user__btn__edit  px-lg-3 ">
+                          <i class="far fa-edit"></i> Редактировать профиль
                         </div>
                       </div>
-                      <div class="form-group col-12">
-                        <label class="form-home__user__style__label" for="form-home__user__email">E-mail</label>
-                        <input id="form-home__user__email" type="email"
-                               class="form-home__user__style__input form-control"
-                               placeholder="E-mail" name="email" value="{{auth()->user()->email}}">
-                      </div>
-                      <div class="form-group col-lg-12 mt-3">
+                      <div class="form-group col-lg-6 offset-lg-6 form-home-btn-submit d-none">
                         <button id="form-home__user__submit" type="submit"
-                                class="form-home__user__btn__submit btn px-lg-5">Редактировать
+                                class="form-home__user__btn__submit"><i class="far fa-save form-home__user__btn__submit__i"></i> Сохранить
                         </button>
+                      </div>
+                      <div class="form-group col-lg-4 form-home-btn-cancel d-none">
+                        <div class="form-home__user__btn__cancel  px-lg-3 ">
+                          Отмена редактирования
+                        </div>
                       </div>
                     </div>
                   </form>

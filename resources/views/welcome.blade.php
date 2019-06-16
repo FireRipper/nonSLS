@@ -183,10 +183,10 @@
                 <label for="comment">Напишите отзыв</label>
                 <textarea class="form-control form-comment-user__textarea {{$errors->has('comment') ? 'is-invalid' : ''}}" name="comment"
                           id="comment"
-                          rows="3" placeholder="Ваш комментарий"></textarea>
+                          rows="3" placeholder="Ваш отзыв"></textarea>
                 @if ($errors->has('comment'))
                   <span class="invalid-feedback text-right" role="alert">
-                                        <strong>{{ $errors->first('comment')}}</strong>
+                                        <strong>{{ $errors->first('comment', 'Поле отзыв должно быть заполнено!')}}</strong>
                                     </span>
                 @endif
               </div>
