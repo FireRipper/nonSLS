@@ -15,6 +15,11 @@
                 {{ session('status') }}
               </div>
             @endif
+            @if($message = Session::get('success'))
+                <div class="alert alert-success">
+                  <p>{{$message}}</p>
+                </div>
+              @endif
           </div>
         </div>
       </div>
@@ -56,9 +61,10 @@
                 <h2 class="content-home-user__h2 col-12 text-center mt-md-4 mt-2">Личный
                   кабинет {{$authUser->name}}</h2>
                 <div class="col-12">
-                  <form id="form-home" action="javascript:void(0)" method="POST">
+                  <form id="form-home" action="{{route('home-update', $authUser->id)}}" method="POST">
                     <hr class="form-home__user__style__hr">
                     @csrf
+                    @method('PUT')
                     <div class="form-row">
                       <div class="form-group col-lg-4">
                         <label class="form-home__user__style__label" for="form-home__user__first__name">Ваше
