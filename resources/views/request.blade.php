@@ -38,6 +38,11 @@
             </li>
           </ul>
         </div>
+        @if($message = Session::get('success'))
+          <div class="col-sm-6 col-11 request-content-alert__success d-flex justify-content-center">
+            <p class="request-content-alert__success__p"><i class="fas fa-clipboard-check"></i> {{$message}}</p>
+          </div>
+        @endif
         <h3 class="col-12 text-center request-content__h3__request mt-2 mb-3"><i class="fas fa-paperclip"></i>
           Заява</h3>
         <div class="col-lg-8 mb-sm-5 request-content__form">

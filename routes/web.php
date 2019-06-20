@@ -41,6 +41,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::put('/home', 'HomeController@update')->name('home-update');
+Route::put('profile', 'ProfileController@update')->name('profile-update');
 
 

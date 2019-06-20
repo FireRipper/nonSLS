@@ -32,18 +32,4 @@ class HomeController extends Controller
             'requests' => $requests,
         ]);
     }
-
-
-    public function update(UserRequest $request, int $id){
-
-        $user = User::findOfFail($id);
-        $user->name = $request->get('first_name');
-        $user->middle_name = $request->get('middle_name');
-        $user->last_name = $request->get('last_name');
-        $user->phone_number = $request->get('phone_number');
-        $user->email = $request->get('email');
-        $is_Saved = $user->save();
-
-        return redirect()->route('home')->with('success', 'Data updated');
-    }
 }

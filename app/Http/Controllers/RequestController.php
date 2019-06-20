@@ -31,7 +31,7 @@ class RequestController extends Controller
         $requestModel->user_id = auth()->id();
         $requestModel->save();
 
-        return redirect()->route('request');
+        return redirect()->route('request')->with('success', 'Ваша заявка отправлена');
     }
 
     public function show(Request $request, int $id)
