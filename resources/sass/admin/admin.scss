@@ -1,0 +1,20 @@
+//variables
+@import "../variables";
+
+//global
+@import "../global";
+
+//left sidebar menu admin panel
+@import "sidebar";
+
+//request admin panel
+@import "request";
+
+//technical task admin panel
+@import "technicaltask";
+
+//user admin panel
+@import "user";
+
+//report admin panel
+@import "report";

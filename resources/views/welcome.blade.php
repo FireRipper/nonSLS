@@ -38,7 +38,7 @@
             <div class="content-services-block-box-service__details__content">
               <img src="{{asset('images/main_content/services/light_theme/security_alarm/security_light.png')}}"
                    alt="security" class="content-services-block-box-service__details__content__img">
-              <h3 class="content-services-block-box-service__details__content__h3">Охранная Система, Сигнализация</h3>
+              <h3 class="content-services-block-box-service__details__content__h3">Установка Охранной Сигнализации</h3>
               <a href="{{url('services#security')}}" class="content-services-block-box-service__details__content__a">Подробнее</a>
             </div>
           </div>
@@ -158,7 +158,7 @@
   <div id="block-comments" class="container mt-sm-3 mb-sm-4">
     <div class="row mt-1">
       <div class="col-12 block-comments__header__text">
-        <h2 class="pl-4">Оставьте свой комментарий</h2>
+        <h2 class="pl-4">Оставьте свой комментарий <i class="fas fa-comment-alt"></i></h2>
       </div>
     </div>
     <hr>
@@ -169,10 +169,10 @@
             <form action="{{url('/')}}" method="post" id="form-comment-user">
               @csrf
               <div class="form-comment-user__name form-group">
-                <label for="formGroupExampleInput">Введите ваше имя (пвседоним)</label>
+                <label for="formGroupExampleInput">Ваше имя</label>
                 <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
                        id="formGroupExampleInput"
-                       placeholder="Имя пользователя" name="name" value="{{auth::user()->name}}" required>
+                       placeholder="Имя пользователя" name="name" value="{{auth()->user()->name}}" required readonly>
                 @if ($errors->has('name'))
                   <span class="invalid-feedback text-right" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -181,12 +181,12 @@
               </div>
               <div class="form-comment-user__text form-group">
                 <label for="comment">Напишите отзыв</label>
-                <textarea class="form-control {{$errors->has('comment') ? 'is-invalid' : ''}}" name="comment"
+                <textarea class="form-control form-comment-user__textarea {{$errors->has('comment') ? 'is-invalid' : ''}}" name="comment"
                           id="comment"
-                          rows="3" placeholder="Ваш комментарий"></textarea>
+                          rows="3" placeholder="Ваш отзыв"></textarea>
                 @if ($errors->has('comment'))
                   <span class="invalid-feedback text-right" role="alert">
-                                        <strong>{{ $errors->first('comment') }}</strong>
+                                        <strong>{{ $errors->first('comment', 'Поле отзыв должно быть заполнено!')}}</strong>
                                     </span>
                 @endif
               </div>

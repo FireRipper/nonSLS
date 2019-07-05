@@ -1,0 +1,74 @@
+.content-admin-report__h4{
+  color: $darker;
+  font-size: calcFluidFontSize(16, 24, 480, 1280);
+}
+
+.content-admin-report__form{
+  background: #fff;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 1px 3px rgba(37,168,132,0.12), 0 1px 2px rgba(37,168,132,0.24);
+}
+
+#content-admin-report{
+  .content-admin-report__label{
+    font-weight: 600;
+    color: $darker;
+    font-size: calcFluidFontSize(16, 18, 480, 1280);
+  }
+  .content-admin-report__style__textarea, .content-admin-report__style__input{
+    font-size: calcFluidFontSize(16, 18, 480, 1280);
+    color: $darker;
+    border: 0;
+    resize: none;
+    box-shadow: 0 1px 3px rgba(37,168,132,0.12), 0 1px 2px rgba(37,168,132,0.24);
+    transition: .5s;
+    &:focus{
+      border: 0 !important;
+      box-shadow: 0 14px 28px rgba(37,168,132,0.25), 0 10px 10px rgba(37,168,132,0.22);
+    }
+    &:hover{
+      box-shadow: 0 3px 6px rgba(37,168,132,0.16), 0 3px 6px rgba(37,168,132,0.23);
+    }
+  }
+  .content-admin-report__submit{
+    color: $light;
+    background: #6200ee;
+    width: 100%;
+    opacity: .8;
+    transition: .5s;
+    box-shadow: 0 1px 3px rgba(98,0,238,0.12), 0 1px 2px rgba(98,0,238,0.24);
+    &:hover{
+      box-shadow: 0 14px 28px rgba(98,0,238,0.25), 0 10px 10px rgba(98,0,238,0.22);
+    }
+  }
+  .content-admin-report__btn__del__input{
+    background: #f44336;
+    border: 1px solid #f44336;
+    border-radius: .25rem;
+    padding: 5px 0;
+    color: $light;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(244,67,54,0.12), 0 1px 2px rgba(244,67,54,0.24);
+    &:hover{
+      box-shadow: 0 14px 28px rgba(244,67,54,0.25), 0 10px 10px rgba(244,67,54,0.22);
+    }
+  }
+  .content-admin-report__btn__add__input{
+    background: #25ba84;
+    border: 1px solid #25ba84;
+    border-radius: .25rem;
+    padding: 5px 0;
+    color: $light;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(37,168,132,0.12), 0 1px 2px rgba(37,168,132,0.24);
+    &:hover{
+      box-shadow: 0 14px 28px rgba(37,168,132,0.25), 0 10px 10px rgba(37,168,132,0.22);
+    }
+  }
+}

@@ -12,6 +12,7 @@ class MainController extends Controller
     public function getMain()
     {
         $comments = Comment::leftJoin('users', 'users.id', '=', 'comments.user_id')
+            ->orderBy('comments.created_at', 'desc')
             ->paginate(5);
 
         $titles = 'Лаборатория нестандартных решений';

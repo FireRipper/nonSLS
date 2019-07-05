@@ -15,7 +15,9 @@ mix.js('resources/js/app.js', 'public/js')
 	.js('resources/js/global.js', 'public/js/main.js')
 	.sass('resources/sass/app.scss', 'public/css')
 	.sass('resources/sass/bootstrap.scss', 'public/css')
+	.sass('resources/sass/admin/admin.scss', 'public/css')
 	.options({
 		processCssUrls: false
 	})
-	.copyDirectory('resources/images', 'public/images');
+	.copyDirectory('resources/images', 'public/images')
+	.copyDirectory('resources/fonts', 'public/fonts');

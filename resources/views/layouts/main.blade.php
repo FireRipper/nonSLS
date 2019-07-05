@@ -14,6 +14,7 @@
   <link rel="icon" href="{{asset('/favicon.ico')}}" type="image/x-icon">
   <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css">
   <link rel="stylesheet" href="{{asset('css/app.css')}}" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
@@ -41,19 +42,25 @@
               class="fas fa-scroll"></i> Подача заявы</a>
       </nav>
       <div class="header-menu__btn d-flex justify-content-end">
+        @php
+          $authUser = auth()
+        @endphp
         @if (Route::has('login'))
           @auth
             <div class="dropdown">
               <a id="navbarDropdown" class="header-menu__btn__user__name nav-link dropdown-toggle rounded" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
+                <i class="fas fa-user-circle"></i> {{ $authUser->user()->name }}
               </a>
               <div class="dropdown-menu dropdown-menu-right header-dropdown-menu__style" aria-labelledby="navbarDropdown">
-                <a href="{{ url('/home') }}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-portrait"></i> Личный кабинет</a>
+                <a href="{{ url('/home') }}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-portrait header-dropdown-menu__link__icon"></i> Личный кабинет</a>
+                @if ($authUser->user()->isAdmin)
+                  <a href="{{route('admin')}}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-lock header-dropdown-menu__link__icon"></i> Админ панель</a>
+                @endif
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item header-menu__dropdown__logout" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                  Выйти <i class="fas fa-sign-out-alt"></i>
+                  Выйти <i class="fas fa-sign-out-alt header-dropdown-menu__link__icon"></i>
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

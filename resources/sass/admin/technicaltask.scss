@@ -1,0 +1,40 @@
+#content-admin-technical-task {
+  .content-admin-technical-task__label {
+    color: $darker;
+    font-weight: 600;
+    font-size: calcFluidFontSize(14, 18, 480, 1280);
+  }
+
+  .content-admin-technical-task__style__input, .content-admin-technical-task__style__textarea {
+    font-size: calcFluidFontSize(12, 16, 480, 1280);
+    border: 0;
+    box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    resize: none;
+
+    &:focus {
+      box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+    }
+  }
+
+  .content-admin-technical-task__submit {
+    color: $lighter;
+    opacity: .9;
+    font-weight: 600;
+    font-size: calcFluidFontSize(13, 15, 480, 1280);
+    background-color: #2955c8;
+    border-color: #3f6ad8;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+    &:hover {
+      opacity: 1;
+      box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
