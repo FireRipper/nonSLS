@@ -110,7 +110,13 @@ $(document).ready(() => {
 			.removeClass('d-none')
 			.addClass('d-block')
 	})
-	$('.content-admin-report__btn__add__input').click(() => {
+
+	$('.public-user-comment__delete__comment').on('submit', () => {
+		confirm('Are you sure you want to delete it?')
+	})
+
+	$('.request-content-alert__success').fadeOut(2000)
+	/*$('.content-admin-report__btn__add__input').click(() => {
 		const report = $('#report')
 
 		report
@@ -119,7 +125,7 @@ $(document).ready(() => {
 			.removeClass('del-me')
 			.addClass('del-me_' + delCount++)
 			.insertAfter($('[id^= report]:last'))
-	})
+	})*/
 
 })
 

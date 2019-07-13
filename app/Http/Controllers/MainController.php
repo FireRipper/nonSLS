@@ -17,7 +17,8 @@ class MainController extends Controller
 
         $titles = 'Лаборатория нестандартных решений';
 
-        return view('welcome', ['comments' => $comments])->with('titles', $titles);
+        return view('welcome', [
+            'comments' => $comments])->with('titles', $titles);
     }
 
     //show services page

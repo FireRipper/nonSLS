@@ -154,6 +154,9 @@
       </div>
     </div>
   </div>
+  @php
+    $authUser = auth()->user()
+  @endphp
 
   <div id="block-comments" class="container mt-sm-3 mb-sm-4">
     <div class="row mt-1">
@@ -172,7 +175,7 @@
                 <label for="formGroupExampleInput">Ваше имя</label>
                 <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
                        id="formGroupExampleInput"
-                       placeholder="Имя пользователя" name="name" value="{{auth()->user()->name}}" required readonly>
+                       placeholder="Имя пользователя" name="name" value="{{$authUser->name}}" required readonly>
                 @if ($errors->has('name'))
                   <span class="invalid-feedback text-right" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -222,6 +225,15 @@
         @foreach($comments as $comment)
           <div class="public-user-comment__user__name d-inline">{{ $comment->name }}</div>
           <p class="public-user-comment__user__text">{{ $comment->comment }}</p>
+            @auth
+              @if($authUser->isAdmin)
+                <form {{--method="post" action="{{route('del-comment', $comment->idComment)}}"--}} class="public-user-comment__delete__comment">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-outline-danger my-3">Del comment</button>
+                </form>
+              @endif
+            @endauth
         @endforeach
           {{$comments}}
       </div>

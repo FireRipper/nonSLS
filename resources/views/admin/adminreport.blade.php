@@ -7,39 +7,43 @@
       <h2 class="content-admin__h2">Отчёты</h2>
     </div>
     <div class="row">
-      @foreach($reports as $report)
+      @foreach($statements as $statement)
         <div class="col-12">
           <div class="content-admin__request__content col-lg-10 mt-sm-3 offset-lg-1 mb-3">
             <span class="content-admin__request__span col-12 text-center d-block">
-              <i class="fas fa-paperclip"></i> Заявка от {{ $report->name . ' ' . $report->last_name}}
+              <i class="fas fa-paperclip"></i> Заявка от {{ $statement->userFirstName . ' ' . $statement->userLastName}}
             </span>
             <table class="table">
               <tbody>
               <tr>
+                <th scope="row" class="content-admin__request__table__th">Номер заявки</th>
+                <td class="content-admin__request__table__td copy-value">{{ $statement->id }}</td>
+              </tr>
+              <tr>
                 <th scope="row" class="content-admin__request__table__th">E-mail</th>
-                <td class="content-admin__request__table__td copy-value">{{ $report->email }}</td>
+                <td class="content-admin__request__table__td copy-value">{{ $statement->userEmail }}</td>
               </tr>
               <tr>
                 <th scope="row" class="content-admin__request__table__th">Услуга</th>
-                <td class="content-admin__request__table__td">{{ $report->service }}</td>
+                <td class="content-admin__request__table__td">{{ $statement->service }}</td>
               </tr>
               <tr>
                 <th scope="row" class="content-admin__request__table__th">Техническое задание</th>
                 <td class="content-admin__request__table__td">
-                  {{ $report->task }}
+                  {{ $statement->task }}
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="content-admin__request__table__th">Дата подачи</th>
-                <td class="content-admin__request__table__td">{{ $report->created_at }}</td>
+                <td class="content-admin__request__table__td">{{ $statement->created_at }}</td>
               </tr>
               </tbody>
             </table>
           </div>
         </div>
       @endforeach
-      <h4 class="content-admin-report__h4 col-md-10 offset-md-1 ">Сформируйте отчёт для пользователя</h4>
-      <div class="col-md-10 mb-sm-3 offset-md-1 content-admin-report__form">
+      <h4 class="content-admin-report__h4 col-md-10 offset-md-1 ">Загрузите отчёт для пользователя</h4>
+      {{--<div class="col-md-10 mb-sm-3 offset-md-1 content-admin-report__form">
         <form id="content-admin-report" action="javascript:void(0)" method="post">
           @csrf
           <div class="add">
@@ -69,14 +73,14 @@
                 @endif
               </div>
               <div class="col-lg-4 btn-delete">
-                <span class="content-admin-report__label d-block mb-2">Удалить поля</span>
-                <div class="content-admin-report__btn__del__input"><i class="fas fa-minus-circle"></i> Удалить поля</div>
+                <span class="content-admin-report__label d-block mb-2">Удалить файл</span>
+                <div class="content-admin-report__btn__del__input"><i class="fas fa-minus-circle"></i> Удалить файл</div>
               </div>
             </div>
           </div>
           <div class="form-row">
             <div class="col-lg-4">
-              <label for="content-admin-report__btn__add" class="content-admin-report__label">Добавить ещё поля</label>
+              <label for="content-admin-report__btn__add" class="content-admin-report__label">Добавить файл</label>
               <div id="content-admin-report__btn__add" class="content-admin-report__btn__add__input"><i class="fas fa-plus-circle"></i> Добавить поля</div>
             </div>
             <div class="col-lg-12 mt-3">
@@ -84,30 +88,6 @@
             </div>
           </div>
         </form>
-      </div>
-      {{--<div class="col-md-10 offset-md-1">
-        <table id="content-admin__request__table" class="table table-hover table-responsive content-admin__request__table__border__radius">
-          <thead class="content-admin__request__thead">
-          <tr>
-            <th scope="col" class="content-admin__request__table__thead__th">#</th>
-            <th scope="col" class="content-admin__request__table__thead__th">Материал</th>
-            <th scope="col" class="content-admin__request__table__thead__th">Единица измерения</th>
-            <th scope="col" class="content-admin__request__table__thead__th">Цена за метариал</th>
-            <th scope="col" class="content-admin__request__table__thead__th">Дата создания отчёта</th>
-          </tr>
-          </thead>
-          <tbody class="content-admin__request__tbody">
-          @foreach($reports as $report)
-            <tr>
-              <th scope="row" class="content-admin__request__table__th">{{ $report->id }}</th>
-              <th scope="row" class="content-admin__request__table__th">{{ $report->text }}</th>
-              <th scope="row" class="content-admin__request__table__th">{{ $report->units }}</th>
-              <th scope="row" class="content-admin__request__table__th">{{ $report->price }}</th>
-              <th scope="row" class="content-admin__request__table__th">{{ $report->created_at }}</th>
-            </tr>
-          @endforeach
-          </tbody>
-        </table>
       </div>--}}
     </div>
   </main>

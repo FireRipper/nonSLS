@@ -196,13 +196,8 @@
                  aria-labelledby="v-pills-technical-task-tab">
               <div class="row justify-content-center">
                 <h2 class="content-home-user__technical__task__h2 col-12 text-center mt-sm-3 mt-1 mb-2">Составленные технические задания </h2>
-                <div class="content-home-user__technical__task col-md-11">
-                  Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute
-                  magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris
-                  ipsum
-                  velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip labore
-                  Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do sint
-                  minim consectetur qui.
+                <div class="content-home-user__technical__task col-md-11 my-3">
+
                 </div>
               </div>
             </div>
