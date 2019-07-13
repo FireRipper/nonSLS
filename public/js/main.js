@@ -10815,7 +10815,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.public-user-comment__delete__comment').on('submit', function () {
     confirm('Are you sure you want to delete it?');
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.request-content-alert__success').fadeOut(2000);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.request-content-alert__success').fadeOut(4000);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.technical-task__alert__success').fadeOut(6000);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.technical-task__alert__fail').fadeOut(7000);
   /*$('.content-admin-report__btn__add__input').click(() => {
   	const report = $('#report')
   

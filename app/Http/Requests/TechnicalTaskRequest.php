@@ -13,7 +13,7 @@ class TechnicalTaskRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class TechnicalTaskRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'email' => 'required|string|email|max:191',
+            'textarea' => 'required|string|max:1200',
         ];
     }
 }
