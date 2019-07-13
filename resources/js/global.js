@@ -115,7 +115,11 @@ $(document).ready(() => {
 		confirm('Are you sure you want to delete it?')
 	})
 
-	$('.request-content-alert__success').fadeOut(2000)
+	$('.request-content-alert__success').fadeOut(4000)
+
+	$('.technical-task__alert__success').fadeOut(6000)
+
+	$('.technical-task__alert__fail').fadeOut(7000)
 	/*$('.content-admin-report__btn__add__input').click(() => {
 		const report = $('#report')
 

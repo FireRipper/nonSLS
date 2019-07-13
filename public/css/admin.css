@@ -439,6 +439,30 @@ body {
   color: #33475b;
 }
 
+.technical-task__alert__success {
+  font-size: calc(0.0025 * 100vw + 12.8px);
+  color: #67C23A;
+  background: #fff;
+  top: 1%;
+  z-index: 999;
+  box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+  border-radius: 0.3rem;
+}
+.technical-task__alert__success .technical-task__alert__success__p {
+  margin: 10px 5px;
+}
+.technical-task__alert__fail {
+  font-size: calc(0.0025 * 100vw + 12.8px);
+  color: #f44336;
+  background: #fff;
+  top: 1%;
+  z-index: 999;
+  box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
+  border-radius: 0.3rem;
+}
+.technical-task__alert__fail .technical-task__alert__fail__p {
+  margin: 10px 5px;
+}
 #content-admin-technical-task .content-admin-technical-task__label {
   color: #33475b;
   font-weight: 600;

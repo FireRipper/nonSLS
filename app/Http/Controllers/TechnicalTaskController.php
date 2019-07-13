@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TechnicalTaskRequest;
+use App\TechnicalTask;
+use App\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use mysql_xdevapi\Exception;
 
 class TechnicalTaskController extends Controller
 {
@@ -25,18 +30,32 @@ class TechnicalTaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TechnicalTaskRequest $request)
     {
-        //
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            $technicalTaskModel = new TechnicalTask();
+
+            $technicalTaskModel->user_id = $user->id;
+            $technicalTaskModel->text = $request->textarea;
+            $is_Saved = $technicalTaskModel->save();
+
+            return redirect()->route('admin-task')->with('success', 'Техническое задание отправлено пользователю ' .
+                ($user->name));
+        } else {
+            return redirect()->route('admin-task')->with('fail', 'Пользователя с email-ом ' .
+                ($request->email) . ' не существует!');
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -47,7 +66,7 @@ class TechnicalTaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -58,8 +77,8 @@ class TechnicalTaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -70,7 +89,7 @@ class TechnicalTaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

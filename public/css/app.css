@@ -1087,12 +1087,12 @@ header {
   border: 1px solid #eaf0f6;
 }
 #request-content .request-content-alert__success {
-  color: #ffffff;
-  background-color: #68c934;
-  border-color: #68c934;
+  font-size: calc(0.0025 * 100vw + 12.8px);
+  color: #67C23A;
+  background: #fff;
+  z-index: 999;
+  box-shadow: 0 1px 3px rgba(41, 85, 200, 0.12), 0 1px 2px rgba(41, 85, 200, 0.24);
   border-radius: 0.3rem;
-  box-shadow: 0 10px 20px rgba(104, 201, 52, 0.19), 0 6px 6px rgba(104, 201, 52, 0.23);
-  font-size: calc(0.00375 * 100vw + 11.2px);
   top: 20%;
 }
 #request-content .request-content-alert__success .request-content-alert__success__p {

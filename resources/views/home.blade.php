@@ -181,6 +181,7 @@
                       </tr>
                       </tbody>
                     </table>
+
                   </div>
                 @endforeach
                 @if(!count($requests))
@@ -197,7 +198,16 @@
               <div class="row justify-content-center">
                 <h2 class="content-home-user__technical__task__h2 col-12 text-center mt-sm-3 mt-1 mb-2">Составленные технические задания </h2>
                 <div class="content-home-user__technical__task col-md-11 my-3">
-
+                  @foreach($technicalTasks as $technicalTask)
+                    <div class="content-home-user__technical__task__text my-2">
+                      {{ $technicalTask->id }})
+                      {{ $technicalTask->text }}
+                    </div>
+                    {{$technicalTasks}}
+                    @endforeach
+                  @if(!count($technicalTasks))
+                    <div class="col-12">На данный момент, у нас нету технического задания составленного специалистом.</div>
+                    @endif
                 </div>
               </div>
             </div>
