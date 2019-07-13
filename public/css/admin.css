@@ -463,6 +463,10 @@ body {
 .technical-task__alert__fail .technical-task__alert__fail__p {
   margin: 10px 5px;
 }
+#content-admin-technical-task__e-mail__help {
+  font-size: calc(0.00375 * 100vw + 9.2px);
+}
+
 #content-admin-technical-task .content-admin-technical-task__label {
   color: #33475b;
   font-weight: 600;

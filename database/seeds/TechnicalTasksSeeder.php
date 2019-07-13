@@ -13,6 +13,6 @@ class TechnicalTasksSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\TechnicalTask::class, 50)->create();
+        factory(App\TechnicalTask::class, 200)->create();
     }
 }
