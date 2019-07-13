@@ -18,8 +18,8 @@
             <tr>
               <th scope="col" class="content-admin__user__table__thead__th">#</th>
               <th scope="col" class="content-admin__user__table__thead__th">Имя</th>
-              <th scope="col" class="content-admin__user__table__thead__th">Фамилия</th>
               <th scope="col" class="content-admin__user__table__thead__th">Отчество</th>
+              <th scope="col" class="content-admin__user__table__thead__th">Телефон</th>
               <th scope="col" class="content-admin__user__table__thead__th">E-mail</th>
               <th scope="col" class="content-admin__user__table__thead__th">Дата регистрации</th>
             </tr>
@@ -29,8 +29,8 @@
               <tr>
                 <th scope="row" class="content-admin__user__table__th">{{ $user->id}}</th>
                 <td class="content-admin__user__table__td">{{ $user->name }}</td>
-                <td class="content-admin__user__table__td">{{ $user->middle_name }}</td>
                 <td class="content-admin__user__table__td">{{ $user->last_name }}</td>
+                <td class="content-admin__user__table__td">{{ $user->phone_number }}</td>
                 <td class="content-admin__user__table__td">{{ $user->email }}</td>
                 <td class="content-admin__user__table__td">{{ $user->created_at }}</td>
               </tr>
