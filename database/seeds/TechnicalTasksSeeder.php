@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
-class ReportTableSeeder extends Seeder
+
+class TechnicalTasksSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,7 @@ class ReportTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Report::class, 15)->create();
+        //
+        factory(App\TechnicalTask::class, 50)->create();
     }
 }

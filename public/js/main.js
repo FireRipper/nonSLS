@@ -10812,10 +10812,20 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     btnCancel.addClass('d-none').removeClass('d-block');
     btnEdit.removeClass('d-none').addClass('d-block');
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-admin-report__btn__add__input').click(function () {
-    var report = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#report');
-    report.clone().attr('id', 'report' + cloneCount++).removeClass('del-me').addClass('del-me_' + delCount++).insertAfter(jquery__WEBPACK_IMPORTED_MODULE_0___default()('[id^= report]:last'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.public-user-comment__delete__comment').on('submit', function () {
+    confirm('Are you sure you want to delete it?');
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.request-content-alert__success').fadeOut(2000);
+  /*$('.content-admin-report__btn__add__input').click(() => {
+  	const report = $('#report')
+  
+  	report
+  		.clone()
+  		.attr('id', 'report'+ cloneCount++)
+  		.removeClass('del-me')
+  		.addClass('del-me_' + delCount++)
+  		.insertAfter($('[id^= report]:last'))
+  })*/
 });
 
 /***/ }),

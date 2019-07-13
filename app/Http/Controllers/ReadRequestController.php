@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Request;
 
 class ReadRequestController extends Controller
 {
@@ -13,8 +13,22 @@ class ReadRequestController extends Controller
      */
     public function index()
     {
-        return view('admin/adminreadrequest');
-        //
+
+        //return users request which have is_read = 1
+        $requests = Request::select([
+                'requests.*',
+                'users.name as userFirstName',
+                'users.last_name as userLastName',
+                'users.email as userEmail',
+                'users.phone_number as userPhone'
+            ])
+            ->where('is_read', 1)
+            ->orderBy('requests.created_at', 'desc')
+            ->leftJoin('users', 'users.id', '=', 'requests.user_id')
+            ->paginate(15);
+
+        return view('admin/adminreadrequest', ['requests' => $requests]);
+
     }
 
     /**

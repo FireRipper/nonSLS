@@ -43,17 +43,17 @@
       </nav>
       <div class="header-menu__btn d-flex justify-content-end">
         @php
-          $authUser = auth()
+          $authUser = auth()->user()
         @endphp
         @if (Route::has('login'))
           @auth
             <div class="dropdown">
               <a id="navbarDropdown" class="header-menu__btn__user__name nav-link dropdown-toggle rounded" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                <i class="fas fa-user-circle"></i> {{ $authUser->user()->name }}
+                <i class="fas fa-user-circle"></i> {{ $authUser->name }}
               </a>
               <div class="dropdown-menu dropdown-menu-right header-dropdown-menu__style" aria-labelledby="navbarDropdown">
                 <a href="{{ url('/home') }}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-portrait header-dropdown-menu__link__icon"></i> Личный кабинет</a>
-                @if ($authUser->user()->isAdmin)
+                @if ($authUser->isAdmin)
                   <a href="{{route('admin')}}" class="dropdown-item header-menu__dropdown__private__cab"><i class="fas fa-lock header-dropdown-menu__link__icon"></i> Админ панель</a>
                 @endif
                 <div class="dropdown-divider"></div>

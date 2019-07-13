@@ -17,16 +17,17 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('request_id');
-            $table->text('text');
-            $table->char('units', 20);
-            $table->decimal('price');
+            $table->unsignedBigInteger('file_id');
+            $table->string('image');
 
+            $table->foreign('file_id')->references('id')->on('files')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
 
 
             $table->index('user_id');
             $table->index('request_id');
+            $table->index('file_id');
 
             $table->timestamps();
         });

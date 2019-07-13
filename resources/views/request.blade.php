@@ -39,7 +39,7 @@
           </ul>
         </div>
         @if($message = Session::get('success'))
-          <div class="col-sm-6 col-11 request-content-alert__success d-flex justify-content-center">
+          <div class="col-sm-6 col-12 request-content-alert__success text-center position-absolute">
             <p class="request-content-alert__success__p"><i class="fas fa-clipboard-check"></i> {{$message}}</p>
           </div>
         @endif

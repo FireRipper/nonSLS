@@ -68,7 +68,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(UserRequest $request)
     {
         $user = auth()->user();
 
@@ -78,7 +78,7 @@ class ProfileController extends Controller
         $user->phone_number = $request->get('phone_number');
         $user->email = $request->get('email');
 
-        $is_Saved = $user->save();
+        $user->save();
 
         return redirect()->route('home')->with('success', 'Data updated');    }
 

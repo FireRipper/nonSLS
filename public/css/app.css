@@ -1093,6 +1093,7 @@ header {
   border-radius: 0.3rem;
   box-shadow: 0 10px 20px rgba(104, 201, 52, 0.19), 0 6px 6px rgba(104, 201, 52, 0.23);
   font-size: calc(0.00375 * 100vw + 11.2px);
+  top: 20%;
 }
 #request-content .request-content-alert__success .request-content-alert__success__p {
   margin-top: 1rem;

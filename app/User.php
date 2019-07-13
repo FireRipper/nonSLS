@@ -49,4 +49,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Report::class);
     }
+    public function technicalTasks(){
+        return $this->hasMany(TechnicalTask::class);
+    }
 }

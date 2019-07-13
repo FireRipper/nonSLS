@@ -28,6 +28,10 @@ Route::group(['prefix' => 'panel', 'middleware' => 'only.admin'], function () {
 
     Route::get('technical-tasks', 'TechnicalTaskController@index')->name('admin-task');
 
+    Route::post('technical-tasks/apply', 'TechnicalTaskController@store')->name('admin-task-apply');
+
+    /*Route::delete('{id}/delete-success', 'CommentController@destroy')->name('del-comment');*/
+
     Route::get('users', 'UserController@index')->name('admin-user');
 
     Route::group(['prefix' => 'requests'], function () {
