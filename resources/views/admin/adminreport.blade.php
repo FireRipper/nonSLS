@@ -43,52 +43,21 @@
         </div>
       @endforeach
       <h4 class="content-admin-report__h4 col-md-10 offset-md-1 ">Загрузите отчёт для пользователя</h4>
-      {{--<div class="col-md-10 mb-sm-3 offset-md-1 content-admin-report__form">
-        <form id="content-admin-report" action="javascript:void(0)" method="post">
-          @csrf
-          <div class="add">
-            <div class= "block-report form-row mb-sm-3 align-items-center del-me" id="report">
-              <div class="block-material col-lg-8">
-                <label for="content-admin-report__style__textarea" class="content-admin-report__label">Материалы</label>
-                <textarea class="form-control content-admin-report__style__textarea" id="content-admin-report__style__textarea" rows="2" placeholder="Материалы используемые при работе..."></textarea>
-              </div>
-              <div class="block-units col-lg-4">
-                <label for="content-admin-report__units" class="content-admin-report__label">Единица измерения(шт., м, кг, г)</label>
-                <input type="text" class="form-control content-admin-report__style__input {{ $errors->has('text') ? ' is-invalid' : '' }}" id="content-admin-report__units"
-                       placeholder="Например, 34 шт. или 150 м">
-                @if ($errors->has('text'))
-                  <span class="invalid-feedback text-right" role="alert">
-                  <strong>{{ $errors->first('text') }}</strong>
-              </span>
-                @endif
-              </div>
-              <div class="block-price col-lg-8">
-                <label for="content-admin-report__price" class="content-admin-report__label">Цена (метариал, вып.работа) грн.</label>
-                <input type="text" class="form-control content-admin-report__style__input {{ $errors->has('text') ? ' is-invalid' : '' }}" id="content-admin-report__price"
-                       placeholder="Введите цену за материал, проделанную работу...">
-                @if ($errors->has('text'))
-                  <span class="invalid-feedback text-right" role="alert">
-                  <strong>{{ $errors->first('text') }}</strong>
-              </span>
-                @endif
-              </div>
-              <div class="col-lg-4 btn-delete">
-                <span class="content-admin-report__label d-block mb-2">Удалить файл</span>
-                <div class="content-admin-report__btn__del__input"><i class="fas fa-minus-circle"></i> Удалить файл</div>
-              </div>
+        <form action="javascript:void(0)" method="post" class="col-sm-10 offset-sm-1">
+          <div class="form-row justify-content-md-between">
+            <div class="custom-file col-lg-5 form-group">
+              <input type="file" class="custom-file-input" id="content-admin-report-form-file">
+              <label class="custom-file-label" for="content-admin-report-form-file">Выберите файл</label>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="col-lg-4">
-              <label for="content-admin-report__btn__add" class="content-admin-report__label">Добавить файл</label>
-              <div id="content-admin-report__btn__add" class="content-admin-report__btn__add__input"><i class="fas fa-plus-circle"></i> Добавить поля</div>
-            </div>
-            <div class="col-lg-12 mt-3">
-              <button  type="submit" class="btn content-admin-report__submit">Оправить отчёт пользователю <i class="fas fa-directions"></i></button>
+            {{--<div class="custom-file col-lg-5 form-group">
+              <input type="file" class="custom-file-input" id="content-admin-report-form-image">
+              <label class="custom-file-label" for="content-admin-report-form-image">Выберите картинку</label>
+            </div>--}}
+            <div class="form-group">
+              <button type="submit" class="btn content-admin-technical-task__submit mb-2"><i class="fas fa-plus-circle"></i> Добавить отчёт пользователю на страницу</button>
             </div>
           </div>
         </form>
-      </div>--}}
     </div>
   </main>
 @endsection

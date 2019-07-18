@@ -1351,6 +1351,25 @@ header {
   background: #ffffff45;
 }
 
+#content-home-user-pagination .pagination .page-item {
+  padding: 0 5px;
+}
+#content-home-user-pagination .pagination .page-item.active .page-link {
+  color: #f8f9fa !important;
+  background: #25ba84 !important;
+  border-color: #25ba84;
+  box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+}
+#content-home-user-pagination .pagination .page-link {
+  border-radius: 0.25rem !important;
+  min-width: 31px !important;
+  border: 0;
+  color: #25ba84;
+}
+#content-home-user-pagination .pagination .page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+}
+
 #content-home-user .content-home-user__alert__success {
   font-size: calc(0.0025 * 100vw + 12.8px);
   color: #67C23A;

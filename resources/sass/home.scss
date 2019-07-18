@@ -26,6 +26,34 @@
   }
 }
 
+#content-home-user-pagination{
+  .pagination{
+    .page-item {
+      padding: 0 5px;
+    }
+
+    .page-item.active {
+      .page-link {
+        color: $light !important;
+        background: #25ba84 !important;
+        border-color: #25ba84;
+        box-shadow: 0 10px 20px rgba(41, 85, 200, 0.19), 0 6px 6px rgba(41, 85, 200, 0.23);
+      }
+    }
+
+    .page-link {
+      border-radius: .25rem !important;
+      min-width: 31px !important;
+      border: 0;
+      color: #25ba84;
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(51, 153, 153, 0.35);
+      }
+    }
+  }
+}
+
 #content-home-user {
   .content-home-user__alert__success{
     font-size: calcFluidFontSize(14, 16, 480, 1280);

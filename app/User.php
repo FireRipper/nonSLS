@@ -52,4 +52,7 @@ class User extends Authenticatable
     public function technicalTasks(){
         return $this->hasMany(TechnicalTask::class);
     }
+    public function files(){
+        return $this->hasMany(File::class);
+    }
 }

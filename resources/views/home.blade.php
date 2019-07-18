@@ -181,6 +181,7 @@
 
                   </div>
                 @endforeach
+                <div id="content-home-user-pagination" class="col-12 d-flex justify-content-center my-3">{{ $requests }}</div>
                 @if(!count($requests))
                   <div class="col-12 content-home-user__not__have__request">
                     <a class="content-home-user__not__have__request__a text-center" href="{{route('request')}}" title="Нажмите что бы подать заяву">
@@ -200,8 +201,8 @@
                       {{ $technicalTask->id }})
                       {{ $technicalTask->text }}
                     </div>
-                    {{$technicalTasks}}
-                    @endforeach
+                  @endforeach
+                  <div id="content-home-user-pagination" class="col-12 d-flex justify-content-center my-3">{{ $technicalTasks }}</div>
                   @if(!count($technicalTasks))
                     <div class="col-12">На данный момент, у нас нету технического задания составленного специалистом.</div>
                     @endif
