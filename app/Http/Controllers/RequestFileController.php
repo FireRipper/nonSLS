@@ -4,28 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FileController extends Controller
+class RequestFileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +14,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // File upload http://nonsls/panel/requests/3/reports (report)
     }
 
     /**
@@ -45,18 +25,7 @@ class FileController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        // File download http://nonsls/panel/requests/3/reports (report)
     }
 
     /**
@@ -68,7 +37,7 @@ class FileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // File edit (name) http://nonsls/panel/requests/3/reports (report)
     }
 
     /**
@@ -79,6 +48,6 @@ class FileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // File delete http://nonsls/panel/requests/3/reports (report)
     }
 }

@@ -7,40 +7,44 @@
       <h2 class="content-admin__h2">Отчёты</h2>
     </div>
     <div class="row">
-      @foreach($statements as $statement)
-        <div class="col-12">
-          <div class="content-admin__request__content col-lg-10 mt-sm-3 offset-lg-1 mb-3">
-            <span class="content-admin__request__span col-12 text-center d-block">
-              <i class="fas fa-paperclip"></i> Заявка от {{ $statement->userFirstName . ' ' . $statement->userLastName}}
-            </span>
-            <table class="table">
-              <tbody>
-              <tr>
-                <th scope="row" class="content-admin__request__table__th">Номер заявки</th>
-                <td class="content-admin__request__table__td copy-value">{{ $statement->id }}</td>
-              </tr>
-              <tr>
-                <th scope="row" class="content-admin__request__table__th">E-mail</th>
-                <td class="content-admin__request__table__td copy-value">{{ $statement->userEmail }}</td>
-              </tr>
-              <tr>
-                <th scope="row" class="content-admin__request__table__th">Услуга</th>
-                <td class="content-admin__request__table__td">{{ $statement->service }}</td>
-              </tr>
-              <tr>
-                <th scope="row" class="content-admin__request__table__th">Техническое задание</th>
-                <td class="content-admin__request__table__td">
-                  {{ $statement->task }}
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="content-admin__request__table__th">Дата подачи</th>
-                <td class="content-admin__request__table__td">{{ $statement->created_at }}</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
+      <div class="col-12">
+        <div class="content-admin__request__content col-lg-10 mt-sm-3 offset-lg-1 mb-3">
+          <span class="content-admin__request__span col-12 text-center d-block">
+            <i class="fas fa-paperclip"></i> Заявка от {{ $statement->userFirstName . ' ' . $statement->userLastName}}
+          </span>
+          <table class="table">
+            <tbody>
+            <tr>
+              <th scope="row" class="content-admin__request__table__th">Номер заявки</th>
+              <td class="content-admin__request__table__td copy-value">{{ $statement->id }}</td>
+            </tr>
+            <tr>
+              <th scope="row" class="content-admin__request__table__th">E-mail</th>
+              <td class="content-admin__request__table__td copy-value">{{ $statement->userEmail }}</td>
+            </tr>
+            <tr>
+              <th scope="row" class="content-admin__request__table__th">Услуга</th>
+              <td class="content-admin__request__table__td">{{ $statement->service }}</td>
+            </tr>
+            <tr>
+              <th scope="row" class="content-admin__request__table__th">Техническое задание</th>
+              <td class="content-admin__request__table__td">
+                {{ $statement->task }}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="content-admin__request__table__th">Дата подачи</th>
+              <td class="content-admin__request__table__td">{{ $statement->created_at }}</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+      @foreach($statement->files as $file)
+        {{ $file }}<br><br>
+        @foreach($file->requestImages as $image)
+          {{ $image }}<br>
+        @endforeach
       @endforeach
       <h4 class="content-admin-report__h4 col-md-10 offset-md-1 ">Загрузите отчёт для пользователя</h4>
         <form action="javascript:void(0)" method="post" class="col-sm-10 offset-sm-1">

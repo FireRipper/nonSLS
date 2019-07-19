@@ -11,8 +11,14 @@ class File extends Model
         return $this->belongsTo(File::class);
     }
 
-    public function report()
+    public function requests()
     {
-        return $this->hasMany(Report::class);
+        return $this->belongsToMany(Request::class);
+    }
+
+    public function requestImages()
+    {
+        return $this->hasMany(FileRequestFileImage::class)
+            ->leftJoin('files', 'files.id', '=', 'file_request_file_images.image_id');
     }
 }

@@ -20,7 +20,7 @@ class RequestController extends Controller
             'users.email as userEmail',
             'users.phone_number as userPhone'
         ])
-            ->where('is_read', 0)
+            ->whereNull('read_at')
             ->orderBy('requests.created_at', 'desc')
             ->leftJoin('users', 'users.id', '=', 'requests.user_id')
             ->paginate(15);
@@ -38,29 +38,16 @@ class RequestController extends Controller
         $requestModel->user_id = auth()->id();
         $requestModel->save();
 
-        $data = array(
+        $data = [
             'chat_id' => $chat_id,
             'text' => 'Пользователь: ' . '<i>' . (auth()->user()->name) . '</i>' . "\n"
                         . 'Услуга: ' . '<i>' . ($request->service) . '</i>' . "\n"
                 . 'Техническое задание: ' . '<i>' . ($request->task) . '</i>' . "\n",
             'parse_mode' => 'HTML'
-        );
+        ];
 
-        $telegramMessage = file_get_contents($this->api_url . $this->bot_api_key . "/sendmessage?" . http_build_query($data));
+        file_get_contents($this->api_url . $this->bot_api_key . "/sendmessage?" . http_build_query($data));
 
         return redirect()->route('request')->with('success', 'Ваша заявка отправлена');
-    }
-
-    public function show(Request $request, int $id)
-    {
-        // get request + all reports
-        $model = Request::findOfFail($id);
-
-        if (! $model->is_read) {
-            $model->is_read = true;
-            $model->save();
-        }
-
-//        return view()
     }
 }

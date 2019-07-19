@@ -41,18 +41,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
     public function requests()
     {
         return $this->hasMany(Request::class);
     }
-    public function reports()
+
+    public function technicalTasks()
     {
-        return $this->hasMany(Report::class);
-    }
-    public function technicalTasks(){
         return $this->hasMany(TechnicalTask::class);
     }
-    public function files(){
+
+    public function files()
+    {
         return $this->hasMany(File::class);
     }
 }
