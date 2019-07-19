@@ -79,12 +79,10 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
-       /* $commentUser = Comment::find($id);
-
+        $commentUser = Comment::find($id);
         $commentUser->delete();
 
-        return redirect()->route('main');*/
+        return redirect()->route('main');
     }
 }
 

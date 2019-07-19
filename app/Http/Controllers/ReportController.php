@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Report;
 use App\Request as Statement;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -15,7 +15,7 @@ class ReportController extends Controller
      */
     public function index(Request $request, int $requestId)
     {
-        $statements = Statement::select(
+        $statement = Statement::with('files.requestImages')->select(
             [
                 'requests.*',
                 'users.name as userFirstName',
@@ -24,22 +24,15 @@ class ReportController extends Controller
             ]
         )
             ->leftJoin('users', 'users.id', '=', 'requests.user_id')
-            ->where('requests.id', $requestId)->get();
+            ->where('requests.id', $requestId)
+            ->firstOrFail();
 
-        /* $reports = Report::select([
-             'reports.*',
-             'users.name',
-             'users.last_name',
-             'users.email',
-             'requests.service',
-             'requests.task'
-         ])
-             ->leftJoin('users', 'users.id', '=', 'reports.user_id')
-             ->leftJoin('requests', 'requests.id', '=', 'reports.request_id')
-             ->where('request_id', $requestId)->get();*/
+        // Update read timestamp on every read
+        $statement->read_at = Carbon::now();
+        $statement->save();
 
         return view('admin/adminreport', [
-            'statements' => $statements,
+            'statement' => $statement,
         ]);
     }
 }

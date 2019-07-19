@@ -9,6 +9,6 @@ $factory->define(\App\Request::class, function (Faker $faker) {
         'user_id' => mt_rand(1, 50),
         'service' => $faker->text(191),
         'task' => $faker->text(300),
-        'is_read' => $faker->boolean(),
+        'read_at' => $faker->boolean ? $faker->dateTime : null,
     ];
 });

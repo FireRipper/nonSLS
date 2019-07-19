@@ -33,6 +33,10 @@
   }
 }
 
+#content-admin-technical-task__e-mail__help{
+  font-size: calcFluidFontSize(11, 14, 480, 1280);
+}
+
 #content-admin-technical-task {
   .content-admin-technical-task__label {
     color: $darker;

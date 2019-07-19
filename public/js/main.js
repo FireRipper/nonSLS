@@ -10818,6 +10818,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.request-content-alert__success').fadeOut(4000);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.technical-task__alert__success').fadeOut(6000);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.technical-task__alert__fail').fadeOut(7000);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.content-home-user__alert__success').fadeOut(7000);
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sidebar-list-ul__li').hasClass('active-requests')) {
+    var submenuActive = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sidebar-list__submenu__ul');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dropdown-toggle-requests').removeClass('collapsed').attr('aria-expanded', true);
+    submenuActive.addClass('show');
+  }
   /*$('.content-admin-report__btn__add__input').click(() => {
   	const report = $('#report')
   
@@ -10828,6 +10835,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   		.addClass('del-me_' + delCount++)
   		.insertAfter($('[id^= report]:last'))
   })*/
+
 });
 
 /***/ }),

@@ -13,8 +13,6 @@ class ReadRequestController extends Controller
      */
     public function index()
     {
-
-        //return users request which have is_read = 1
         $requests = Request::select([
                 'requests.*',
                 'users.name as userFirstName',
@@ -22,9 +20,10 @@ class ReadRequestController extends Controller
                 'users.email as userEmail',
                 'users.phone_number as userPhone'
             ])
-            ->where('is_read', 1)
+            ->whereNotNull('read_at')
             ->orderBy('requests.created_at', 'desc')
             ->leftJoin('users', 'users.id', '=', 'requests.user_id')
+            ->orderByDesc('read_at')
             ->paginate(15);
 
         return view('admin/adminreadrequest', ['requests' => $requests]);

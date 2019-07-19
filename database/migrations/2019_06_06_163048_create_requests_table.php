@@ -18,7 +18,7 @@ class CreateRequestsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('service');
             $table->text('task');
-            $table->boolean('is_read')->default(false);
+            $table->timestamp('read_at')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

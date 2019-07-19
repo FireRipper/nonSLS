@@ -38,9 +38,9 @@
       </li>
       <li class="sidebar-list-ul__li
              @if($currentRoute === 'admin-request' || $currentRoute === 'admin-read-request' || $currentRoute === 'admin-report')
-            active
+            active active-requests
             @endif">
-        <a href="#pageSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-list-ul-li__a">
+        <a href="#pageSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle dropdown-toggle-requests sidebar-list-ul-li__a">
           <i class="fas fa-mail-bulk sidebar-admin__i"></i>
           <span class="sidebar-list-ul-li-a__span">
             Заявки

@@ -120,6 +120,17 @@ $(document).ready(() => {
 	$('.technical-task__alert__success').fadeOut(6000)
 
 	$('.technical-task__alert__fail').fadeOut(7000)
+
+	$('.content-home-user__alert__success').fadeOut(7000)
+
+	if ($('.sidebar-list-ul__li').hasClass('active-requests')){
+		const submenuActive = $('.sidebar-list__submenu__ul')
+
+		$('.dropdown-toggle-requests')
+			.removeClass('collapsed')
+			.attr('aria-expanded', true)
+		submenuActive.addClass('show')
+	}
 	/*$('.content-admin-report__btn__add__input').click(() => {
 		const report = $('#report')
 

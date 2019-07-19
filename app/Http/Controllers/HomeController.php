@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Request;
-use App\Http\Requests\UserRequest;
 use App\TechnicalTask;
-use App\User;
 
 class HomeController extends Controller
 {
@@ -26,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $requests = Request::where('user_id', auth()->id())->paginate(5);
-        $technicalTasks = TechnicalTask::where('user_id', auth()->id())->paginate(5);
+        $requests = Request::where('user_id', auth()->id())->paginate(3);
+        $technicalTasks = TechnicalTask::where('user_id', auth()->id())->paginate(3);
 
         return view('home')->with([
             'titles' => 'ЛНР - личный кабинет',

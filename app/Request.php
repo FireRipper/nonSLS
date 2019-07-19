@@ -16,8 +16,10 @@ class Request extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function reports()
+
+    public function files()
     {
-        return $this->hasMany(Report::class);
+        return $this->belongsToMany(File::class);
     }
+
 }

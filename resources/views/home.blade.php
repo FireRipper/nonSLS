@@ -15,11 +15,6 @@
                 {{ session('status') }}
               </div>
             @endif
-              @if($message = Session::get('success'))
-                <div class="alert alert-success">
-                  <p>{{$message}}</p>
-                </div>
-              @endif
           </div>
         </div>
       </div>
@@ -58,6 +53,11 @@
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                  aria-labelledby="v-pills-home-tab">
               <div class="row">
+                @if($message = Session::get('success'))
+                  <div class="col-lg-6 offset-lg-3 offset-1 col-10 content-home-user__alert__success text-center position-absolute my-2">
+                    <p class="content-home-user__alert__success__p"><i class="fas fa-check-circle content-home-user__alert__success__i"></i> {{ $message }}</p>
+                  </div>
+                @endif
                 <h2 class="content-home-user__h2 col-12 text-center mt-md-4 mt-2">Личный
                   кабинет {{$authUser->name}}</h2>
                 <div class="col-12">
@@ -120,20 +120,17 @@
                           </span>
                         <input id="form-home__user__phone__number" type="text" name="phone_number"
                                class="form-home__user__style__input form-control d-none {{ $errors->has('phone_number') ? 'is-invalid' : '' }}"
-                               placeholder="+38(099)-212-13-22"
+                               placeholder="(099)-234-4332"
                                value="{{$authUser->phone_number}}" >
                           @if ($errors->has('phone_number'))
                             <span class="invalid-feedback text-right" role="alert">
-                              <strong>{{ $errors->first('phone_number'), 'Укажите Ваш номер телефона' }}</strong>
+                              <strong>{{ $errors->first('phone_number'), 'Укажите Ваш номер телефона в заданом формате! (например: (099)-234-4332)' }}</strong>
                             </span>
                           @endif
                       </div>
                       <div class="form-group col-lg-8">
                         <label class="form-home__user__style__label" for="form-home__user__email">E-mail</label>
-                        <span class="d-block form-home__user__style__span">{{$authUser->email}}</span>
-                        <input id="form-home__user__email" type="email"
-                               class="form-home__user__style__input form-control d-none"
-                               placeholder="krykov.zanna@example.net" name="email" value="{{$authUser->email}}">
+                        <span class="d-block form-home__user__style__span__email">{{$authUser->email}}</span>
                       </div>
                       <div class="form-group col-lg-6 form-home-btn-edit">
                         <div class="form-home__user__btn__edit  px-lg-3 ">
@@ -184,6 +181,7 @@
 
                   </div>
                 @endforeach
+                <div id="content-home-user-pagination" class="col-12 d-flex justify-content-center my-3">{{ $requests }}</div>
                 @if(!count($requests))
                   <div class="col-12 content-home-user__not__have__request">
                     <a class="content-home-user__not__have__request__a text-center" href="{{route('request')}}" title="Нажмите что бы подать заяву">
@@ -203,8 +201,8 @@
                       {{ $technicalTask->id }})
                       {{ $technicalTask->text }}
                     </div>
-                    {{$technicalTasks}}
-                    @endforeach
+                  @endforeach
+                  <div id="content-home-user-pagination" class="col-12 d-flex justify-content-center my-3">{{ $technicalTasks }}</div>
                   @if(!count($technicalTasks))
                     <div class="col-12">На данный момент, у нас нету технического задания составленного специалистом.</div>
                     @endif
