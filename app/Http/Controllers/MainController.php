@@ -11,7 +11,8 @@ class MainController extends Controller
     //show main page
     public function getMain()
     {
-        $comments = Comment::leftJoin('users', 'users.id', '=', 'comments.user_id')
+        $comments = Comment::select('users.*', 'comments.*')
+            ->leftJoin('users', 'users.id', '=', 'comments.user_id')
             ->orderBy('comments.created_at', 'desc')
             ->paginate(5);
 

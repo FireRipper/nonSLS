@@ -224,16 +224,18 @@
         @endif
         @foreach($comments as $comment)
           <div class="public-user-comment__user__name d-inline">{{ $comment->name }}</div>
-          <p class="public-user-comment__user__text">{{ $comment->comment }}</p>
+          <div class="public-user-comment__user__text mb-3">
+            {{ $comment->comment }}
             @auth
               @if($authUser->isAdmin)
-                <form {{--method="post" action="{{route('del-comment', $comment->idComment)}}"--}} class="public-user-comment__delete__comment">
+                <form method="post" action="{{route('del-comment', $comment->id)}}" class="public-user-comment__delete__comment text-right">
                   @csrf
                   @method('DELETE')
-                  <button type="submit" class="btn btn-outline-danger my-3">Del comment</button>
+                  <button type="submit" class="btn btn-link text-danger">Delete</button>
                 </form>
               @endif
             @endauth
+          </div>
         @endforeach
           {{$comments}}
       </div>

@@ -30,7 +30,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'only.admin'], function () {
 
     Route::post('technical-tasks/apply', 'TechnicalTaskController@store')->name('admin-task-apply');
 
-    /*Route::delete('{id}/delete-success', 'CommentController@destroy')->name('del-comment');*/
+    Route::delete('{id}/delete-success', 'CommentController@destroy')->name('del-comment');
 
     Route::get('users', 'UserController@index')->name('admin-user');
 
