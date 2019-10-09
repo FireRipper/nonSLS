@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Request;
 use App\TechnicalTask;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,11 @@ class HomeController extends Controller
     {
         $requests = Request::where('user_id', auth()->id())->paginate(3);
         $technicalTasks = TechnicalTask::where('user_id', auth()->id())->paginate(3);
+
+       /* $data = array('name'=>"Virat Gandhi");
+        Mail::send('emails.send', $data, function($message) {
+            $message->subject('Laravel Basic Testing Mail');
+        });*/
 
         return view('home')->with([
             'titles' => 'ЛНР - личный кабинет',

@@ -228,7 +228,7 @@
             {{ $comment->comment }}
             @auth
               @if($authUser->isAdmin)
-                <form method="post" action="{{route('del-comment', $comment->id)}}" class="public-user-comment__delete__comment text-right">
+                <form method="post" action="{{route('panel.comments.delete', $comment->id)}}" class="public-user-comment__delete__comment text-right">
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-link text-danger">Delete</button>

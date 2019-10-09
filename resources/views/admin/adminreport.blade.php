@@ -53,6 +53,10 @@
               <input type="file" class="custom-file-input" id="content-admin-report-form-file">
               <label class="custom-file-label" for="content-admin-report-form-file">Выберите файл</label>
             </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
             {{--<div class="custom-file col-lg-5 form-group">
               <input type="file" class="custom-file-input" id="content-admin-report-form-image">
               <label class="custom-file-label" for="content-admin-report-form-image">Выберите картинку</label>
